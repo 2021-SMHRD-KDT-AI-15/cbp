@@ -9,7 +9,7 @@
 <body>
 	<c:if test="${!empty info}">
 		<!-- info가 null값이 아니라면 -->
-		<h1>${info.email}님환영합니다.</h1>
+		<h1>${info.nick}님환영합니다.</h1>
 	</c:if>
 </body>
 </html>
