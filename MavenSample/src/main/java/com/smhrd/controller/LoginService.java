@@ -45,14 +45,14 @@ public class LoginService extends HttpServlet {
 		MemberDTO result = dao.login(dto);
 
 		// 로그인에 성공했다면 회원정보를 공유할 수 있도록 session 영역에 저장해 페이지 이동
-//		if (result != null) { // 로그인 성공
-//			
-//			HttpSession session = request.getSession();
-//			session.setAttribute("info", result);
-//
-//		}
-//
-		response.sendRedirect("Main.jsp");
+		if (result != null) { // 로그인 성공
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("info", result);
+
+		}
+
+		response.sendRedirect("calendar.jsp");
 
 	}
 
