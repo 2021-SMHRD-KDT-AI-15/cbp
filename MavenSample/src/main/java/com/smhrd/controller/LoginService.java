@@ -49,10 +49,10 @@ public class LoginService extends HttpServlet {
 			
 			HttpSession session = request.getSession();
 			session.setAttribute("info", result);
+			response.sendRedirect("calendar.jsp");
 
 		}
 
-		response.sendRedirect("calendar.jsp");
 
 	}
 
