@@ -14,7 +14,6 @@
 		<input type="submit" value="LogIn" class="button fit">
 	</form>
 
-
 	<form action="JoinService" method="post">
 			<input type="text" name="email" placeholder="Email을 입력하세요">
 			<input type="password" name="pw" placeholder="PW를 입력하세요">
