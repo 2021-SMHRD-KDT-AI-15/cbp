@@ -2,27 +2,29 @@ package com.smhrd.model;
 
 public class WiseDTO {
 
-	private String WISE; // 명언
-	private String content;
+	private int w_num;
+	private String wise; // 명언
 	
-	public WiseDTO(String WISE) {
-		this.WISE = WISE;
+	public WiseDTO(int w_num, String wise) {
+		this.w_num = w_num;
+		this.wise = wise;
 	}
 
-	public String getWISE() {
-		return WISE;
+	public int getW_num() {
+		return w_num;
 	}
 
-	public void setWISE(String WISE) {
-		this.WISE = WISE;
+	public void setW_num(int w_num) {
+		this.w_num = w_num;
+	}
+
+	public String getWise() {
+		return wise;
+	}
+
+	public void setWise(String wise) {
+		this.wise = wise;
 	}
 	
-	  public String getContent() {
-	        return content;
-	    }
-
-	    public void setContent(String content) {
-	        this.content = content;
-	    }
 	
 }

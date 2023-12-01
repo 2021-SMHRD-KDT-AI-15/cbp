@@ -13,10 +13,10 @@ public class WiseDAO {
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getFactory();
 	
 	// 게시판 내용을 담을 수 있는 ArrayList 생성
-	ArrayList<WiseDAO> WISE_list = new ArrayList<>();    // b_list는 변수이름임
+	ArrayList<WiseDTO> WISE_list = new ArrayList<>();    // b_list는 변수이름임
 	
 	// 게시판의 내용을 읽어올 수 있는 메소드!
-	public ArrayList<WiseDAO> list() {
+	public ArrayList<WiseDTO> list() {
 		// 1. DB 접속 권한/통로 필요!
 		SqlSession sqlSession = sqlSessionFactory.openSession(true); 
 												// 기본적으로 작업해야하니까 openSession안에 true넣어줘야함
