@@ -21,6 +21,7 @@
 <!-- sql 문장을 정리해서 연결하는 태그 -->
   <mappers>
     <mapper resource="com/smhrd/db/MemberMapper.xml"/>
+    <mapper resource="com/smhrd/db/WiseMapper.xml"/>
     <!-- <mapper resource="com/smhrd/db/BoardMapper.xml"/> -->
   </mappers>
 </configuration>

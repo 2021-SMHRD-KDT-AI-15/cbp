@@ -33,7 +33,7 @@ public class LoginService extends HttpServlet {
 		MemberDAO dao = new MemberDAO();
 
 		// 4. login() 호출 (<- 꺼내온 데이터 email, pw를 한 묶음으로 묶어서 전달 -> MemberDTO 활용)
-
+		
 		MemberDTO dto = new MemberDTO();
 		dto.setEmail(email);
 		dto.setPw(pw);
