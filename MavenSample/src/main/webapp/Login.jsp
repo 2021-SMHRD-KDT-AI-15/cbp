@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE HTML>
 <!--
 	TXT by HTML5 UP
@@ -67,7 +67,7 @@ button {
 					<li><a href="/신체변화.html">나의 신체변화</a></li>
 				</ul></li>
 
-			<li><a herf="/Login.html">로그인</a></li>
+			<li><a herf="./Login.html">로그인</a></li>
 
 
 			</ul>
@@ -81,7 +81,7 @@ button {
 						<div class="content">
 
 							<!-- Content -->
-							<form acton="./Login.jsp" method="post">
+							<form action="LoginService" method="post">
 								<div class="form-group">
 									<label for="email">이메일</label> <input type="text" id="email"
 										name="email" placeholder="이메일을 입력하세요">
@@ -90,9 +90,10 @@ button {
 									<label for="pw">비밀번호</label> <input type="password" id="pw"
 										name="pw" placeholder="비밀번호를 입력하세요">
 								</div>
-								<button type="submit" name="btn1">로그인</button>
-								<button name="btn2">회원가입</button>
+								<input type="submit" value="로그인">
 							</form>
+								<a href="./Join.jsp">
+								<button name="btn2">회원가입</button></a>
 						</div>
 					</div>
 				</div>
