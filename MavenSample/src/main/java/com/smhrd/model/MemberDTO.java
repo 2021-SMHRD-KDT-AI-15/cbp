@@ -9,11 +9,10 @@ public class MemberDTO {
 	private String s_date;
 	private int price;
 	private int s_daily;
-	private String joinday;
 	
 	// 회원가입을 위한 생성자 메소드
 	public MemberDTO(String email, String pw, String nick, String q_date, String s_date, int price,
-			int s_daily, String joinday) {
+			int s_daily) {
 		this.email = email;
 		this.pw = pw;
 		this.nick = nick;
@@ -21,7 +20,6 @@ public class MemberDTO {
 		this.s_date = s_date;
 		this.price = price;
 		this.s_daily = s_daily;
-		this.joinday = joinday;
 	}
 	
 	// 로그인을 위한 생성자 메소드
@@ -88,14 +86,6 @@ public class MemberDTO {
 
 	public void setS_daily(int s_daily) {
 		this.s_daily = s_daily;
-	}
-
-	public String getJoinday() {
-		return joinday;
-	}
-
-	public void setJoinday(String joinday) {
-		this.joinday = joinday;
 	}
 	
 }
