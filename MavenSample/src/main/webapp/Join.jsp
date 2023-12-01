@@ -66,60 +66,60 @@
 
 							<table align="center" border="1">
 								<form action="JoinService" id="join" method="post">
-								<tr>
-									<td size="500px" bgcolor="#b1ddab" ; color="#fff"
-										; align="center" colspan="2">Step 1 기본 정보</td>
-								</tr>
-								<tr size="500px" align="center">
-									<td>E-mail</td>
-									<td><input type="text" name="email"
-										placeholder="E-mail을 입력해주세요"></td>
-								</tr>
-								<tr size="500px" align="center">
-									<td>Password</td>
-									<td><input type="password" name="pw"
-										placeholder="비밀번호 입력해주세요"></td>
-								</tr>
-								<tr size="500px" align="center">
-									<td>Nickname</td>
-									<td><input type="text" name="nick"
-										placeholder="닉네임을 입력해주세요"></td>
-								</tr>
-								<tr>
-									<td size="500px" bgcolor="#b1ddab" color="#fff" align="center"
-										colspan="2">Step 2 흡연/금연 정보</td>
-								</tr>
-								<tr size="500px" align="center">
-									<td>금연 시작일</td>
-									<td colspan="2" align="center">금연 시작일을 입력해주세요!<br> <input
-										type="date" name="q_date"></td>
-								</tr>
-								<tr size="500px" align="center">
-									<td>흡연 시작일</td>
-									<td colspan="2" align="center">흡연 시작일을 입력해주세요!<br> <input
-										type="date" name="s_date"></td>
-								</tr>
-								<tr size="500px" align="center">
-									<td>담배 가격</td>
-									<td colspan="2" align="center">피우고 있는 담배의 가격을 입력해주세요!<br>
-										<input type="text" name="price">
-									</td>
-								</tr>
-								<tr size="500px" align="center">
-									<td>하루 흡연 횟수</td>
-									<td colspan="2" align="center">하루에 몇 회 흡연을 하는지 입력해주세요!<br>
-										<input type="text" name="s_daily" align="center"
-										placeholder="숫자를 입력해주세요"></td>
-								</tr>
-								<tr>
-									<td align="center" colspan="2"><br>
-										<button type="submit" id="submit">
-											<input type="submit" value="회원가입">
-										</button>
-										<button type="reset" id="reset">
-											<input type="reset" value="초기화">
-										</button></td>
-								</tr>
+									<tr>
+										<td size="500px" bgcolor="#b1ddab" ; color="#fff"
+											; align="center" colspan="2">Step 1 기본 정보</td>
+									</tr>
+									<tr size="500px" align="center">
+										<td>E-mail</td>
+										<td><input type="text" name="email"
+											placeholder="E-mail을 입력해주세요"></td>
+									</tr>
+									<tr size="500px" align="center">
+										<td>Password</td>
+										<td><input type="password" name="pw"
+											placeholder="비밀번호 입력해주세요"></td>
+									</tr>
+									<tr size="500px" align="center">
+										<td>Nickname</td>
+										<td><input type="text" name="nick"
+											placeholder="닉네임을 입력해주세요"></td>
+									</tr>
+									<tr>
+										<td size="500px" bgcolor="#b1ddab" color="#fff" align="center"
+											colspan="2">Step 2 흡연/금연 정보</td>
+									</tr>
+									<tr size="500px" align="center">
+										<td>금연 시작일</td>
+										<td colspan="2" align="center">금연 시작일을 입력해주세요!<br> <input
+											type="date" name="q_date" id='currentDate' /></td>
+									</tr>
+									<tr size="500px" align="center">
+										<td>흡연 시작일</td>
+										<td colspan="2" align="center">흡연 시작일을 입력해주세요!<br> <input
+											type="date" name="s_date"></td>
+									</tr>
+									<tr size="500px" align="center">
+										<td>담배 가격</td>
+										<td colspan="2" align="center">피우고 있는 담배의 가격을 입력해주세요!<br>
+											<input type="text" name="price">
+										</td>
+									</tr>
+									<tr size="500px" align="center">
+										<td>하루 흡연 횟수</td>
+										<td colspan="2" align="center">하루에 몇 회 흡연을 하는지 입력해주세요!<br>
+											<input type="text" name="s_daily" align="center"
+											placeholder="숫자를 입력해주세요"></td>
+									</tr>
+									<tr>
+										<td align="center" colspan="2"><br>
+											<button type="submit" id="submit">
+												<input type="submit" value="회원가입">
+											</button>
+											<button type="reset" id="reset">
+												<input type="reset" value="초기화">
+											</button></td>
+									</tr>
 								</form>
 							</table>
 
@@ -169,6 +169,10 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+		<script>
+			document.getElementById('currentDate').value = new Date()
+					.toISOString().substring(0, 10);
+		</script>
 
 		<!-- Q4. js(가입 성공/실패, 초기화 시) 안 먹히면 삭제해도 될 것 같아용...  -->
 		<script>
