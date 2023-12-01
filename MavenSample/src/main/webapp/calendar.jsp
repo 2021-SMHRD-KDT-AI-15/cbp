@@ -37,7 +37,7 @@ html, body {
 </head>
 
 <body style="padding: 30px;">
-	<c:if test="${!empty info}">
+	<c:if"${!empty info}">
 		<!-- info가 null값이 아니라면 -->
 		<h1>${info.nick}님환영합니다.</h1>
 	</c:if>
@@ -45,7 +45,15 @@ html, body {
 	<div id='calendar-container'>
 		<div id='calendar'></div>
 	</div>
-
+	<script>
+	var today = new Date('${info.q_date}'); 
+	var time = today.getTime(); 
+	var diff = (24 * 60 * 60 * 1000)*40; 
+	var tomo = new Date(time + diff);
+	// 날짜만 추출하기
+	var todayDateOnly = today.toISOString().substring(0, 10);
+	var tomoDateOnly = tomo.toISOString().substring(0, 10);
+	</script>
 	<script>
         (function () {
             $(function () {
@@ -95,6 +103,12 @@ html, body {
                     },
                     // 이벤트 
                     events: [
+                    	
+                    	 {
+                    		 title: '금연프로젝트',
+                    		    start: todayDateOnly, // 날짜만 사용
+                    		    end: tomoDateOnly // 날짜만 사용
+                           }
 
                     ]
                 });
