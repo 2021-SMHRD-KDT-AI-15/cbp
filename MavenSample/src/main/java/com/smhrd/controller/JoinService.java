@@ -31,8 +31,6 @@ public class JoinService extends HttpServlet {
 		String s_date = request.getParameter("s_date");
 		int price = Integer.parseInt(request.getParameter("price"));
 		int s_daily = Integer.parseInt(request.getParameter("s_daily"));
-		String joinday = request.getParameter("joinday");
-	
 
 		// 3. DAO 클래스 객체 생성 -> DB에 대한 작업을 진행할 수 있음
 
@@ -40,7 +38,7 @@ public class JoinService extends HttpServlet {
 
 		// 4. DAO의 회원가입 기능(메소드) 호출
 
-		MemberDTO dto = new MemberDTO(email, pw, nick, q_date, s_date, price, s_daily, joinday);
+		MemberDTO dto = new MemberDTO(email, pw, nick, q_date, s_date, price, s_daily);
 		int result = dao.join(dto);
 
 		// 5. 호출된 기능의 결과에 따라 화면 결과 출력

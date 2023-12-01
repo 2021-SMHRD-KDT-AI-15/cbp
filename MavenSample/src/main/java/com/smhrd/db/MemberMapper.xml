@@ -10,7 +10,7 @@
 		 parameterType : 해당하는 sql문장을 실행할 때 연결할 사용자의 데이터 타입을 지정하는 속성 -->
 		 
 	<insert id="join" parameterType="com.smhrd.model.MemberDTO">
-		insert into user_info values(#{email}, #{pw}, #{nick}, #{q_date}, #{s_date}, #{price}, #{s_daily}, #{joinday}) <!-- dto 필드의 필드명과 똑같아야함 -->
+		insert into user_info values(#{email}, #{pw}, #{nick}, #{q_date}, #{s_date}, #{price}, #{s_daily}) <!-- dto 필드의 필드명과 똑같아야함 -->
 	</insert>
 
 	<!-- 로그인을 수행할 수 있는 sql 문장 작성 -->
