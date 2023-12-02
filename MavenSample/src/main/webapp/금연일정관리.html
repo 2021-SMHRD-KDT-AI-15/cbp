@@ -41,11 +41,10 @@
 		}
 
 		#calendar-container {
-			width: 1000px;
-
+			width: 1200px;
 			max-height: 100vh;
-			overflow: hidden;
-
+			overflow-x:hidden;
+			overflow-y: hidden;
 			box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2);
 			border-radius: 8px;
 			text-align: center;
@@ -53,7 +52,8 @@
 			margin-bottom: 20px;
 
 		}
-
+		
+			
 		/* 캘린더 위의 해더 스타일(날짜가 있는 부분) */
 		.fc-header-toolbar {
 			padding-top: 1em;
@@ -209,7 +209,7 @@
 											var calendarEl = $('#calendar')[0];
 											// full-calendar 생성하기
 											var calendar = new FullCalendar.Calendar(calendarEl, {
-												height: '700px', // calendar 높이 설정
+												height: '1000px', // calendar 높이 설정
 												expandRows: true, // 화면에 맞게 높이 재설정
 												customButtons: {
 													mySaveButton: {
