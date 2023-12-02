@@ -9,6 +9,10 @@ public class WiseDTO {
 		this.w_num = w_num;
 		this.wise = wise;
 	}
+	
+	public WiseDTO() {
+		
+	}
 
 	public int getW_num() {
 		return w_num;
