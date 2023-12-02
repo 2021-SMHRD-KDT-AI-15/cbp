@@ -67,7 +67,7 @@ button {
 					<li><a href="/신체변화.html">나의 신체변화</a></li>
 				</ul></li>
 
-			<li><a herf="./Login.html">로그인</a></li>
+			<li><a href="./Login.html">로그인</a></li>
 
 
 			</ul>
@@ -91,9 +91,9 @@ button {
 										name="pw" placeholder="비밀번호를 입력하세요">
 								</div>
 								<input type="submit" value="로그인">
-							</form>
-								<a href="./Join.jsp">
-								<button name="btn2">회원가입</button></a>
+							<button name="btn2">회원가입</button>
+								<a href="./Join.jsp"></a>
+								</form>
 						</div>
 					</div>
 				</div>
@@ -143,11 +143,11 @@ button {
 
 		<!--Q4. 클릭 시 페이지 이동-->
 		<script>
-			let btn1 = document.getElementsByName("btn1")
+			let btn1 = document.getElementByName("btn1")
 			btn1.addEventListener("click", function() {
 				location.href = "./calendar.jsp";
 			})
-			let btn2 = document.getElementsByName("btn2")
+			let btn2 = document.getElementByName("btn2")
 			btn2.addEventListener("click", function() {
 				location.href = "./Join.jsp";
 			})
