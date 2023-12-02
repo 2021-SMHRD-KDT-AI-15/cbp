@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" isELIgnored="false"%>
+	pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE HTML>
 <!--
 	TXT by HTML5 UP
@@ -9,68 +9,67 @@
 <html>
 
 <head>
-	<title>금연여행 :: 금연일정관리</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
+<title>금연여행 :: 금연일정관리</title>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="assets/css/main.css" />
 
-	<!-- ------------------------시작 ------------------->
-
-
-
-	<!-- 화면 해상도에 따라 글자 크기 대응(모바일 대응) -->
-	<meta name="viewport"
-		content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-	<!-- jquery CDN -->
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<!-- fullcalendar CDN -->
-	<link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.css' rel='stylesheet' />
-	<script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.js'></script>
-	<!-- fullcalendar 언어 CDN -->
-	<script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/locales-all.min.js'></script>
-	<style>
-		/* body 스타일 */
-		html,
-		body {
-
-			font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
-
-		}
-
-		#calendar {
-			overflow: hidden;
-
-		}
-
-		#calendar-container {
-			width: 1200px;
-			max-height: 100vh;
-			overflow-x:hidden;
-			overflow-y: hidden;
-			box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2);
-			border-radius: 8px;
-			text-align: center;
-			font-size: 100%;
-			margin-bottom: 20px;
-
-		}
-		
-			
-		/* 캘린더 위의 해더 스타일(날짜가 있는 부분) */
-		.fc-header-toolbar {
-			padding-top: 1em;
-			padding-left: 1em;
-			padding-right: 1em;
-		}
-		#footer.container {
-			margin-top: 0;
-			margin-bottom: 0;
-		}
-		
-	</style>
+<!-- ------------------------시작 ------------------->
 
 
-	<!-- -----------------------끝---------------- -->
+
+<!-- 화면 해상도에 따라 글자 크기 대응(모바일 대응) -->
+<meta name="viewport"
+	content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<!-- jquery CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- fullcalendar CDN -->
+<link
+	href='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.css'
+	rel='stylesheet' />
+<script
+	src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.js'></script>
+<!-- fullcalendar 언어 CDN -->
+<script
+	src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/locales-all.min.js'></script>
+<style>
+/* body 스타일 */
+html, body {
+	font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+}
+
+#calendar {
+	overflow: hidden;
+}
+
+#calendar-container {
+	width: 1200px;
+	max-height: 100vh;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+	text-align: center;
+	font-size: 100%;
+	margin-bottom: 20px;
+}
+
+/* 캘린더 위의 해더 스타일(날짜가 있는 부분) */
+.fc-header-toolbar {
+	padding-top: 1em;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+#footer.container {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+</style>
+
+
+<!-- -----------------------끝---------------- -->
 </head>
 
 <body class="is-preload">
@@ -80,7 +79,9 @@
 		<header id="header">
 			<div class="logo container">
 				<div>
-					<h1><a href="./Main.jsp" id="logo">금연여행</a></h1>
+					<h1>
+						<a href="./Main.jsp" id="logo">금연여행</a>
+					</h1>
 					<p>금연일정관리</p>
 				</div>
 			</div>
@@ -90,12 +91,10 @@
 		<nav id="nav">
 			<ul>
 				<li class="current"><a href="./Main.jsp">홈</a></li>
-				<li>
-					<a href="./Sguide.jsp">금연 정보</a>
+				<li><a href="./Sguide.jsp">금연 정보</a>
 					<ul>
 						<li><a href="./Sguide.jsp">금연 가이드</a></li>
-						<li><a href="./Snews.jsp">금연 뉴스</a></li>
-				</li>
+						<li><a href="./Snews.jsp">금연 뉴스</a></li></li>
 
 			</ul>
 			</li>
@@ -110,22 +109,18 @@
 		<nav id="nav">
 			<ul>
 				<li class="current"><a href="./Main.jsp">홈</a></li>
-				<li>
-					<a href="./Sguide.jsp">금연 정보</a>
+				<li><a href="./Sguide.jsp">금연 정보</a>
 					<ul>
 						<li><a href="./Sguide.jsp">금연 가이드</a></li>
 						<li><a href="./Snews.jsp">금연 뉴스</a></li>
-					</ul>
-				</li>
+					</ul></li>
 				<li><a href="./Shospital.jsp">금연 도움 기관</a></li>
-				<li>
-					<a href="./Mypage.jsp">나의 건강정보</a>
+				<li><a href="./Mypage.jsp">나의 건강정보</a>
 					<ul>
 						<li><a href="./Mypage.jsp">마이페이지</a></li>
 						<li><a href="./Scalendar.jsp">금연일정관리</a></li>
 						<li><a href="./BodyChange.jsp">나의신체변화</a></li>
-					</ul>
-				</li>
+					</ul></li>
 
 				<li><a href="./Login.jsp">로그인</a></li>
 
@@ -144,23 +139,31 @@
 
 							<!-- Recent Posts -->
 							<section>
-								<h2 class="major"><span>메뉴</span></h2>
+								<h2 class="major">
+									<span>메뉴</span>
+								</h2>
 								<ul class="divided">
 									<li>
 										<article class="box post-summary">
-											<h3><a href="./Mypage.jsp">마이페이지</a></h3>
+											<h3>
+												<a href="./Mypage.jsp">마이페이지</a>
+											</h3>
 
 										</article>
 									</li>
 									<li>
 										<article class="box post-summary">
-											<h3><a href="./Scalendar.jsp">금연일정관리</a></h3>
+											<h3>
+												<a href="./Scalendar.jsp">금연일정관리</a>
+											</h3>
 
 										</article>
 									</li>
 									<li>
 										<article class="box post-summary">
-											<h3><a href="./BodyChange.jsp">나의신체변화</a></h3>
+											<h3>
+												<a href="./BodyChange.jsp">나의신체변화</a>
+											</h3>
 
 										</article>
 									</li>
@@ -184,9 +187,10 @@
 									<h2>금연 일정관리</h2>
 									<c:if ${!empty info}>
 										<!-- info가 null값이 아니라면 -->
-										</c:if>
-										<p><strong>${info.nick}</strong>님 환영합니다.</p>
-										</c:if>
+										<p>
+											<strong>${info.nick}</strong>님 환영합니다.
+										</p>
+									</c:if>
 								</header>
 								<!-- calendar 태그 -->
 								<div id='calendar-container'>
@@ -282,15 +286,17 @@
 
 						<!-- About -->
 						<section>
-							<h3 class="major"><span>About Us</span></h3>
+							<h3 class="major">
+								<span>About Us</span>
+							</h3>
 							<p>
-								인공지능 융합서비스 개발자과정(NCS) 15회차 TEAM 돌아와조<br>
-								광주광역시 남구 송암로 60 스마트인재개발원
+								인공지능 융합서비스 개발자과정(NCS) 15회차 TEAM 돌아와조<br> 광주광역시 남구 송암로 60
+								스마트인재개발원
 							</p>
 						</section>
 
 					</div>
-					
+
 				</div>
 
 				<!-- Copyright -->
