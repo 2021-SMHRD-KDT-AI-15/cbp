@@ -45,14 +45,14 @@ public class WiseDAO {
 		
 	}
 		   // 해당하는 void도 BoardDTO 타입으로 바꿔줘야함
-	public WiseDTO detail(int num) {
+	public WiseDTO detail(WiseDTO dto) {
 		// 1. sqlSession 생성 필요!
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		// 2. sql문장 호출 -> Mapper를 활용하여 호출!
-		WiseDTO dto = sqlSession.selectOne("detail", num);  
+		WiseDTO result = sqlSession.selectOne("detail", dto);  
 		// 3. sqlSession 종료
 		sqlSession.close(); 
-		return dto;
+		return result;
 		// 대충 하나의 것만 확인하겠다 라는뜻 
 		// selectOne을 하기 때문에 돌아오는 return값이 있을거임 그걸 저장해줘야함
 	}
