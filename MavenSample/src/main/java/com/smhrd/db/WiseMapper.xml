@@ -13,7 +13,7 @@
 	<!-- select의 경우 돌아오는 결과값(return)이 int형이 아니라 데이터형태이므로 어디에 결과 타입을 담을 것인가에 대한 내용이 필요함(->resultType) -->
 	
 	<select id="wise" parameterType="com.smhrd.model.WiseDTO" resultType="com.smhrd.model.WiseDTO">
-		select * from WISE where w_num=#{w_num}
-	</select>
+		SELECT WISE FROM WISE;
+  </select>
 
 </mapper>
