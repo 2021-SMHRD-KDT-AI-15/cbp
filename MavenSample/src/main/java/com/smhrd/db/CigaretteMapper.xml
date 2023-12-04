@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapper namespace="com.smhrd.model.CigaretteMapper">
+    <!-- 새로운 쿼리 추가: 오늘 피운 담배의 갯수 증가 -->
+    <update id="increaseCigaretteCount">
+        UPDATE user_statistics SET cigarette_count = cigarette_count + 1 WHERE user_id = #{userId} AND TO_CHAR(registered_date, 'YYYY-MM-DD') = TO_CHAR(SYSDATE, 'YYYY-MM-DD');
+    </update>
+</mapper>

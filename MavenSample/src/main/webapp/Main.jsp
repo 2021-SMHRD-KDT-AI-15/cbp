@@ -106,27 +106,45 @@
    </div>
 
 
-    <script>
-    $(document).ready(function(){
+   <script>
+$(document).ready(function(){
+    $.ajax({
+        url: 'WiseService',
+        dataType: 'json',
+        type: 'GET',
+        success: function(data) {
+            var i = 0;
+            setInterval(function(){
+                if(i >= data.length) i = 0;
+                $("#wise").text(data[i].WISE); // 수정: 'WISE' 필드를 text로 설정합니다.
+                i++;
+            }, 60000);
+        }
+    });
+
+    // 담배 아이콘 클릭 이벤트 핸들러
+    $("#cigarette-icon").click(function() {
+        // 서버로 클릭 이벤트 전송
         $.ajax({
-            url: 'WiseService',
-            dataType: 'json',
-            type: 'GET',
-            success: function(data) {
-                var i = 0;
-                setInterval(function(){
-                    if(i >= data.length) i = 0;
-                    $("#wise").text(data[i].WISE); // 수정: 'WISE' 필드를 text로 설정합니다.
-                    i++;
-                }, 60000);
-            }
+            url: 'CigaretteCounter', // 서버에서 처리할 URL을 지정
+            type: 'POST', // 클릭 이벤트를 서버로 전송할 때는 POST 메서드 사용
+            success: function(response) {
+                console.log("Cigarette count increased");
+            },
+            error: function(error) {
+                console.error("Error increasing cigarette count", error);
             }
         });
     });
-    </script>
- 	<div>
-        <p id="wise"></p>
-    </div>
+});
+</script>
+
+<div id="wise"></div>
+<!-- 추가: 담배 모양 아이콘 -->
+<div id="cigarette-icon" style="position: fixed; right: 70px; bottom: 20px; cursor: pointer;">
+    <!-- 담배 아이콘 이미지를 사용하거나 다른 시각적인 디자인을 원하면 해당 부분을 수정 -->
+    🚬 
+</div>
    <!-- Footer -->
    <footer id="footer">
       <div class="container">
