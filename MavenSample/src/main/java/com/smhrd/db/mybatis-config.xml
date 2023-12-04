@@ -22,6 +22,7 @@
   <mappers>
     <mapper resource="com/smhrd/db/MemberMapper.xml"/>
     <mapper resource="com/smhrd/db/WiseMapper.xml"/>
+    <mapper resource="com/smhrd/db/QprojectMapper.xml"/>
     <!-- <mapper resource="com/smhrd/db/BoardMapper.xml"/> -->
   </mappers>
 </configuration>
