@@ -14,19 +14,19 @@ public class WiseDTO {
 		
 	}
 
-	public int getW_num() {
+	public int getW_NUM() {
 		return W_NUM;
 	}
 
-	public void setW_num(int W_NUM) {
+	public void setW_NUM(int W_NUM) {
 		this.W_NUM = W_NUM;
 	}
 
-	public String getWise() {
+	public String getWISE() {
 		return WISE;
 	}
 
-	public void setWise(String WISE) {
+	public void setWISE(String WISE) {
 		this.WISE = WISE;
 	}
 	
