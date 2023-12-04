@@ -16,12 +16,13 @@
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
    <link rel="stylesheet" href="assets/css/main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <style>
    #wise{
-      border: 10px solid #b1ddab;
+      border: 50px solid #b1ddab;
       position: fixed;
-      right: 0px;
-      bottom: 0px;
+      right: 10px;
+      bottom: 20px;
    }
 </style>
 </head>
@@ -104,22 +105,45 @@
 
    </div>
 
-<% 
-    ArrayList<WiseDTO> quotes = (ArrayList<WiseDTO>)request.getAttribute("quotes");
-    int i = 0;
-%>
-<script>
+
+   <script>
 $(document).ready(function(){
-    var quotes = <%= quotes %>;
-    setInterval(function(){
-        if(i >= quotes.length) i = 0;
-        $("#wise").text(quotes[i].wise);
-        i++;
-    }, 60000);
+    $.ajax({
+        url: 'WiseService',
+        dataType: 'json',
+        type: 'GET',
+        success: function(data) {
+            var i = 0;
+            setInterval(function(){
+                if(i >= data.length) i = 0;
+                $("#wise").text(data[i].WISE); // 수정: 'WISE' 필드를 text로 설정합니다.
+                i++;
+            }, 60000);
+        }
+    });
+
+    // 담배 아이콘 클릭 이벤트 핸들러
+    $("#cigarette-icon").click(function() {
+        // 서버로 클릭 이벤트 전송
+        $.ajax({
+            url: 'CigaretteCounter', // 서버에서 처리할 URL을 지정
+            type: 'POST', // 클릭 이벤트를 서버로 전송할 때는 POST 메서드 사용
+            success: function(response) {
+                console.log("Cigarette count increased");
+            },
+            error: function(error) {
+                console.error("Error increasing cigarette count", error);
+            }
+        });
+    });
 });
 </script>
-<div>
-   <p id="wise">명언 들어갈 곳</p>
+
+<div id="wise"></div>
+<!-- 추가: 담배 모양 아이콘 -->
+<div id="cigarette-icon" style="position: fixed; font-size: 30px; right: 70px; bottom: 20px; cursor: pointer;" >
+    <!-- 담배 아이콘 이미지를 사용하거나 다른 시각적인 디자인을 원하면 해당 부분을 수정 -->
+    🚬 
 </div>
    <!-- Footer -->
    <footer id="footer">
