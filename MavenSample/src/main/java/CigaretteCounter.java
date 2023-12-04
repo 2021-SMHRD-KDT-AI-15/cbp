@@ -9,12 +9,12 @@ public class CigaretteCounter {
 
     SqlSessionFactory sqlSessionFactory = SqlSessionManager.getFactory();
 
-    public void increaseCigaretteCount(String userId) {
+    public void increaseCigaretteCount(String EMAIL) {
         SqlSession sqlSession = sqlSessionFactory.openSession(true);
 
         try {
             // 오늘 피운 담배의 갯수를 데이터베이스에 증가시키는 쿼리를 실행
-            sqlSession.update("com.smhrd.model.CigaretteMapper.increaseCigaretteCount", userId);
+            sqlSession.update("com.smhrd.model.CigaretteMapper.increaseCigaretteCount", EMAIL);
         } finally {
             sqlSession.close();
         }
