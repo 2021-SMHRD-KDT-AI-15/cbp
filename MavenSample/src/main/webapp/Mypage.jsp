@@ -131,7 +131,7 @@
 
 								<header>
 									<h2>마이페이지</h2>
-									<p><strong>"뇨니"</strong>님 환영합니다 22일째입니다! 목표까지 18일 남았습니다. 화이팅!</p>
+									<p><strong>${info.nick}</strong>님 환영합니다 22일째입니다! 목표까지 18일 남았습니다. 화이팅!</p>
 								</header>
 							
 								<div class="div">
