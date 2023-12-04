@@ -110,16 +110,30 @@
 %>
 <script>
 $(document).ready(function(){
-    var quotes = <%= quotes %>;
+    var quotes = <%
+        if (quotes != null) {
+            out.print("[");
+            for(int j = 0; j < quotes.size(); j++) {
+                out.print("\"" + quotes.get(j).getWise() + "\"");
+                if(j != quotes.size()-1) {
+                    out.print(",");
+                }
+            }
+            out.print("]");
+        } else {
+            out.print("[]");
+        }
+    %>;
+    var i = 0;
     setInterval(function(){
         if(i >= quotes.length) i = 0;
-        $("#wise").text(quotes[i].wise);
+        $("#wise").text(quotes[i]);
         i++;
     }, 60000);
 });
 </script>
 <div>
-   <p id="wise">명언 들어갈 곳</p>
+   <p id="wise">${wise.wise}</p>
 </div>
    <!-- Footer -->
    <footer id="footer">

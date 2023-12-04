@@ -3,6 +3,7 @@ package com.smhrd.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,37 +23,37 @@ public class WiseService extends HttpServlet {
 
 		// 1. 인코딩
 
-		request.setCharacterEncoding("utf-8");
+//		request.setCharacterEncoding("utf-8");
 
 		// 2. 데이터 꺼내오기
 
-		int w_num = Integer.parseInt(request.getParameter("w_num"));
-		String wise = request.getParameter("wise");
+//		int num = Integer.parseInt(request.getParameter("num"));
+//		String wise = request.getParameter("wise");
 
 		// 3. MemberDAO 객체 생성
 
 		WiseDAO dao = new WiseDAO();
 		ArrayList<WiseDTO> quotes = dao.list();
 
-		// 4. login() 호출 (<- 꺼내온 데이터 email, pw를 한 묶음으로 묶어서 전달 -> MemberDTO 활용)
-
-		WiseDTO dto = new WiseDTO();
-		dto.setW_num(w_num);
-		dto.setWise(wise);
+//		WiseDTO dto = new WiseDTO();
+//		dto.setW_num(w_num);
+//		dto.setWise(wise);
 		
-		WiseDTO result = dao.detail(dto);
+//		WiseDTO result = dao.detail(num);
 		
-		request.setAttribute("quotes", quotes);
-	    request.getRequestDispatcher("Main.jsp").forward(request, response);
+		request.setAttribute("list", quotes);
+//		request.setAttribute("result", result);
+		RequestDispatcher rd = request.getRequestDispatcher("Main.jsp");
+		rd.forward(request, response);
 
 		// 로그인에 성공했다면 회원정보를 공유할 수 있도록 session 영역에 저장해 페이지 이동
-		if (result != null) { // 로그인 성공
+//		if (result != null) { // 로그인 성공
 
-			HttpSession session = request.getSession();
-			session.setAttribute("info", result);
-			response.sendRedirect("calendar.jsp");
+//			HttpSession session = request.getSession();
+//			session.setAttribute("wise", result);
+//			response.sendRedirect("Main.jsp");
 
-		}
+//		}
 
 	}
 

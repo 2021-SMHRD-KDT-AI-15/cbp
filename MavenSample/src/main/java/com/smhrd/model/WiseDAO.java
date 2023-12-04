@@ -36,23 +36,15 @@ public class WiseDAO {
 		
 	}
 	
-	// 게시판을 등록하는 메소드
-	public int upload(WiseDTO dto) {
-		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-		int cnt = sqlSession.insert("upload",dto);
-		sqlSession.close();
-		return cnt;
-		
-	}
 		   // 해당하는 void도 BoardDTO 타입으로 바꿔줘야함
-	public WiseDTO detail(WiseDTO dto) {
+	public WiseDTO detail(int num) {
 		// 1. sqlSession 생성 필요!
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		// 2. sql문장 호출 -> Mapper를 활용하여 호출!
-		WiseDTO result = sqlSession.selectOne("detail", dto);  
+		WiseDTO dto = sqlSession.selectOne("detail", num);  
 		// 3. sqlSession 종료
 		sqlSession.close(); 
-		return result;
+		return dto;
 		// 대충 하나의 것만 확인하겠다 라는뜻 
 		// selectOne을 하기 때문에 돌아오는 return값이 있을거임 그걸 저장해줘야함
 	}
