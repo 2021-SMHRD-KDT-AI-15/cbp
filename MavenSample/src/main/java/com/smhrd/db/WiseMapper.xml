@@ -12,7 +12,7 @@
 	<!-- 로그인을 수행할 수 있는 sql 문장 작성 -->
 	<!-- select의 경우 돌아오는 결과값(return)이 int형이 아니라 데이터형태이므로 어디에 결과 타입을 담을 것인가에 대한 내용이 필요함(->resultType) -->
 	
-	<select id="wise" parameterType="com.smhrd.model.WiseDTO" resultType="com.smhrd.model.WiseDTO">
+	<select id="list" parameterType="com.smhrd.model.WiseDTO" resultType="com.smhrd.model.WiseDTO">
 		SELECT WISE FROM WISE;
   </select>
 

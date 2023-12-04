@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8" isELIgnored="false"%>
+   <%@page import="java.util.ArrayList"%>
+    <%@page import="com.smhrd.model.WiseDTO"%>
+
 <!DOCTYPE HTML>
 <!--
    TXT by HTML5 UP
@@ -101,8 +104,36 @@
 
    </div>
 
+<% 
+    ArrayList<WiseDTO> quotes = (ArrayList<WiseDTO>)request.getAttribute("quotes");
+    int i = 0;
+%>
+<script>
+$(document).ready(function(){
+    var quotes = <%
+        if (quotes != null) {
+            out.print("[");
+            for(int j = 0; j < quotes.size(); j++) {
+                out.print("\"" + quotes.get(j).getWise() + "\"");
+                if(j != quotes.size()-1) {
+                    out.print(",");
+                }
+            }
+            out.print("]");
+        } else {
+            out.print("[]");
+        }
+    %>;
+    var i = 0;
+    setInterval(function(){
+        if(i >= quotes.length) i = 0;
+        $("#wise").text(quotes[i]);
+        i++;
+    }, 60000);
+});
+</script>
 <div>
-   <p id="wise">명언 들어갈 곳</p>
+   <p id="wise">${wise.wise}</p>
 </div>
    <!-- Footer -->
    <footer id="footer">
