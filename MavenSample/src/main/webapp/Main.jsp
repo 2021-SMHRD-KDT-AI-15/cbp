@@ -105,31 +105,24 @@
    </div>
 
 <% 
-    ArrayList<WiseDTO> quotes = (ArrayList<WiseDTO>)request.getAttribute("quotes");
+    ArrayList<WiseDTO> quotes = (ArrayList<WiseDTO>)request.getAttribute("list");
     int i = 0;
 %>
 <script>
 $(document).ready(function(){
-    var quotes = <%
-        if (quotes != null) {
-            out.print("[");
-            for(int j = 0; j < quotes.size(); j++) {
-                out.print("\"" + quotes.get(j).getWise() + "\"");
-                if(j != quotes.size()-1) {
-                    out.print(",");
-                }
-            }
-            out.print("]");
-        } else {
-            out.print("[]");
+    $.ajax({
+        url: 'WiseService',
+        dataType: 'json', // 추가: 서버에서 받아오는 데이터 형식을 JSON으로 설정합니다.
+        type: 'GET',
+        success: function(data) {
+            var i = 0;
+            setInterval(function(){
+                if(i >= data.length) i = 0; // 수정: 'data'가 JSON 배열이므로 바로 사용합니다.
+                $("#wise").text(data[i].WISE); // 수정: 'WISE' 필드를 text로 설정합니다.
+                i++;
+            }, 60000);
         }
-    %>;
-    var i = 0;
-    setInterval(function(){
-        if(i >= quotes.length) i = 0;
-        $("#wise").text(quotes[i]);
-        i++;
-    }, 60000);
+    });
 });
 </script>
 <div>
