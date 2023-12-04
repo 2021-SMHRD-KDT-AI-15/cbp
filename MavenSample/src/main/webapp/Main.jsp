@@ -42,7 +42,14 @@
 
          </ul>
          </li>
-         <li><a href="./Shospital.jsp">금연 도움 기관</a></li>
+         <li><a href="./Shospital.jsp">금연 도움 기관</a>
+         <ul>
+                  <li align="center"><a href="./Public Health.jsp">보건소</a></li>
+            </li>
+
+         </ul>
+         </li>
+         
          <li><a href="./Mypage.jsp">나의 건강정보</a>
            <ul>
                   <li><a href="./Mypage.jsp">마이페이지</a></li>
