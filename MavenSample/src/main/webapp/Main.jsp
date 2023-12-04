@@ -16,12 +16,13 @@
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
    <link rel="stylesheet" href="assets/css/main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <style>
    #wise{
-      border: 10px solid #b1ddab;
+      border: 50px solid #b1ddab;
       position: fixed;
-      right: 0px;
-      bottom: 0px;
+      right: 10px;
+      bottom: 20px;
    }
 </style>
 </head>
@@ -104,30 +105,28 @@
 
    </div>
 
-<% 
-    ArrayList<WiseDTO> quotes = (ArrayList<WiseDTO>)request.getAttribute("list");
-    int i = 0;
-%>
-<script>
-$(document).ready(function(){
-    $.ajax({
-        url: 'WiseService',
-        dataType: 'json', // 추가: 서버에서 받아오는 데이터 형식을 JSON으로 설정합니다.
-        type: 'GET',
-        success: function(data) {
-            var i = 0;
-            setInterval(function(){
-                if(i >= data.length) i = 0; // 수정: 'data'가 JSON 배열이므로 바로 사용합니다.
-                $("#wise").text(data[i].WISE); // 수정: 'WISE' 필드를 text로 설정합니다.
-                i++;
-            }, 60000);
-        }
+
+    <script>
+    $(document).ready(function(){
+        $.ajax({
+            url: 'WiseService',
+            dataType: 'json',
+            type: 'GET',
+            success: function(data) {
+                var i = 0;
+                setInterval(function(){
+                    if(i >= data.length) i = 0;
+                    $("#wise").text(data[i].WISE); // 수정: 'WISE' 필드를 text로 설정합니다.
+                    i++;
+                }, 60000);
+            }
+            }
+        });
     });
-});
-</script>
-<div>
-   <p id="wise">${wise.wise}</p>
-</div>
+    </script>
+ 	<div>
+        <p id="wise"></p>
+    </div>
    <!-- Footer -->
    <footer id="footer">
       <div class="container">
