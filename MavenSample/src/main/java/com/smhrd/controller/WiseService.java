@@ -1,6 +1,7 @@
 package com.smhrd.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,14 +32,18 @@ public class WiseService extends HttpServlet {
 		// 3. MemberDAO 객체 생성
 
 		WiseDAO dao = new WiseDAO();
+		ArrayList<WiseDTO> quotes = dao.list();
 
 		// 4. login() 호출 (<- 꺼내온 데이터 email, pw를 한 묶음으로 묶어서 전달 -> MemberDTO 활용)
 
 		WiseDTO dto = new WiseDTO();
 		dto.setW_num(w_num);
 		dto.setWise(wise);
-
+		
 		WiseDTO result = dao.detail(dto);
+		
+		request.setAttribute("quotes", quotes);
+	    request.getRequestDispatcher("Main.jsp").forward(request, response);
 
 		// 로그인에 성공했다면 회원정보를 공유할 수 있도록 session 영역에 저장해 페이지 이동
 		if (result != null) { // 로그인 성공
