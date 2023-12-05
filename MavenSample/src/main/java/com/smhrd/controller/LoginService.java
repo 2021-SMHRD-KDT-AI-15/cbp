@@ -11,6 +11,8 @@ import javax.servlet.http.HttpSession;
 
 import com.smhrd.model.MemberDAO;
 import com.smhrd.model.MemberDTO;
+import com.smhrd.model.QprojectDAO;
+import com.smhrd.model.QprojectDTO;
 
 @WebServlet("/LoginService")
 public class LoginService extends HttpServlet {
@@ -27,24 +29,30 @@ public class LoginService extends HttpServlet {
 
 		String email = request.getParameter("email");
 		String pw = request.getParameter("pw");
-
+		
 		// 3. MemberDAO 객체 생성
 
 		MemberDAO dao = new MemberDAO();
+		QprojectDAO dao1 = new QprojectDAO();
 
 		// 4. login() 호출 (<- 꺼내온 데이터 email, pw를 한 묶음으로 묶어서 전달 -> MemberDTO 활용)
 		
 		MemberDTO dto = new MemberDTO();
 		dto.setEmail(email);
 		dto.setPw(pw);
-
+		
+		QprojectDTO dto1 = new QprojectDTO();
+		dto1.setEmail(email);
+		
 		MemberDTO result = dao.login(dto);
+		QprojectDTO result1 = dao1.come(dto1);
 
 		// 로그인에 성공했다면 회원정보를 공유할 수 있도록 session 영역에 저장해 페이지 이동
 		if (result != null) { // 로그인 성공
 			
 			HttpSession session = request.getSession();
 			session.setAttribute("info", result);
+			session.setAttribute("info1", result1);
 			response.sendRedirect("Mypage.jsp");
 
 		}

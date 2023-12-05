@@ -20,6 +20,14 @@ public class QprojectDTO {
 		this.p_end = p_end;
 		this.p_count = p_count;
 	}
+	
+	public QprojectDTO(String email) {
+		this.email = email;
+	}
+	
+	public QprojectDTO() {
+		
+	}
 
 	public String getEmail() {
 		return email;
@@ -76,7 +84,5 @@ public class QprojectDTO {
 	public void setP_count(int p_count) {
 		this.p_count = p_count;
 	}
-	
-	
 	
 }
