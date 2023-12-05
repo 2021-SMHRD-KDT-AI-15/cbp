@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.smhrd.model.MemberDAO;
 import com.smhrd.model.MemberDTO;
+import com.smhrd.model.QprojectDAO;
+import com.smhrd.model.QprojectDTO;
 
 @WebServlet("/JoinService")
 public class JoinService extends HttpServlet {
@@ -31,16 +33,20 @@ public class JoinService extends HttpServlet {
 		String s_date = request.getParameter("s_date");
 		int price = Integer.parseInt(request.getParameter("price"));
 		int s_daily = Integer.parseInt(request.getParameter("s_daily"));
+		String p_start = request.getParameter("q_date");
 
 		// 3. DAO 클래스 객체 생성 -> DB에 대한 작업을 진행할 수 있음
 
 		MemberDAO dao = new MemberDAO();
+		QprojectDAO dao1 = new QprojectDAO();
 
 		// 4. DAO의 회원가입 기능(메소드) 호출
 
 		MemberDTO dto = new MemberDTO(email, pw, nick, q_date, s_date, price, s_daily);
 		int result = dao.join(dto);
 
+		QprojectDTO dto1 = new QprojectDTO(email, q_date);
+		int result1 = dao1.put(dto1);
 		// 5. 호출된 기능의 결과에 따라 화면 결과 출력
 
 //		if (result > 0) { // 회원가입에 성공했을 때 -> JoinSuccess.jsp 이동 -> nick 값 가져가야함
@@ -48,7 +54,7 @@ public class JoinService extends HttpServlet {
 //			RequestDispatcher rd = request.getRequestDispatcher("JoinSuccess.jsp");
 //			rd.forward(request, response);
 //		}else { // 회원가입에 실패했을 때
-			response.sendRedirect("Main.jsp");
+		response.sendRedirect("Main.jsp");
 //		}
 
 	}
