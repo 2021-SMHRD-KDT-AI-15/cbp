@@ -5,6 +5,8 @@
     if (session.getAttribute("user") == null) { // 세션에 사용자 정보가 없다면
         response.sendRedirect("./Login.jsp"); // 로그인 페이지로 리다이렉트
         return; // 리다이렉트 후 현재 페이지 처리 중단
+    }else{
+    	response.sendRedirect("./Mypage.jsp");
     }
 %>
 

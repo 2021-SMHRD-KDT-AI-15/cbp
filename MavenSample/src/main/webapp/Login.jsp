@@ -78,7 +78,7 @@ a {
 					<li><a href="./BodyChange.jsp">나의 신체변화</a></li>
 				</ul></li>
 
-			<li><a href="./Login.html">로그인</a></li>
+			<li><a href="./Login.jsp">로그인</a></li>
 
 
 			</ul>
