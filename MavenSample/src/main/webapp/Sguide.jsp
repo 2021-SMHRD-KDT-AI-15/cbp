@@ -150,7 +150,7 @@ th {
 									<%
 									try {
 										Class.forName("oracle.jdbc.driver.OracleDriver");
-										Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@project-db-cgi.smhrd.com:1524",
+										Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@project-db-cgi.smhrd.com:1524:XE",
 										"cgi_21K_AI15_hacksim_1", "smhrd1");
 										Statement stmt = conn.createStatement();
 										ResultSet rs = stmt.executeQuery("SELECT * FROM Q_INFO");
