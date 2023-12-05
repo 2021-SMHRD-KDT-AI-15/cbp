@@ -180,7 +180,11 @@
 								</section>
 
 								<section class="border-line">
-									<h3>20분 후: '${info.nick}'님의 혈압과 심박동수가 정상화 되었습니다.</h3>
+									<% if(info != null) { %>
+        								    <h3>20분 후: '${info.nick}'님의 혈압과 심박동수가 정상화 되었습니다.</h3>
+         									<% } else { %>
+           									 <h3>20분 후: 회원님님의 혈압과 심박동수가 정상화 되었습니다.</h3>
+         									<% } %>
 
 									<!-- 첫 번째 게이지 바 -->
 									<div class="progress-container">
@@ -191,7 +195,11 @@
 								</section>
 
 								<section class="border-line">
-									<h3>2시간 후: '${info.nick}'님의 혈액 순환, 특히 말초 신경계통의 혈액 순환이 개선되기 시작했습니다.</h3>
+									<% if(info != null) { %>
+        								   <h3>2시간 후: '${info.nick}'님의 혈액 순환, 특히 말초 신경계통의 혈액 순환이 개선되기 시작했습니다.</h3>
+         									<% } else { %>
+           									 <h3>2시간 후: 회원님의 혈액 순환, 특히 말초 신경계통의 혈액 순환이 개선되기 시작했습니다.</h3>
+         									<% } %>
 									<div class="progress-container">
 										<progress id="gauge2" value="0" max="720"></progress>
 										<span id="percentDisplay2">0%</span>
@@ -200,7 +208,11 @@
 								</section>
 
 								<section class="border-line">
-									<h3>12시간 후: '${info.nick}'님 체내 일산화탄소의 수치가 정상 범위로 떨어지고, 혈액 속 산소량이 정상화 되었습니다.</h3>
+									<% if(info != null) { %>
+        								  <h3>12시간 후: '${info.nick}'님 체내 일산화탄소의 수치가 정상 범위로 떨어지고, 혈액 속 산소량이 정상화 되었습니다.</h3>
+         									<% } else { %>
+           									 <h3>12시간 후: 회원님 체내 일산화탄소의 수치가 정상 범위로 떨어지고, 혈액 속 산소량이 정상화 되었습니다.</h3>
+         									<% } %>
 									<div class="progress-container">
 										<progress id="gauge3" value="0" max="4320"></progress>
 										<span id="percentDisplay3">0%</span>
@@ -209,8 +221,13 @@
 								</section>
 
 								<section class="border-line">
-									<h3>24시간 후: '${info.nick}'님의 혈액순환, 맥박, 혈압 등의 개선되어 심장마비 위험률이 감소했습니다. 다만, 우리 몸이 폐에 남은 가래를 청소하는
+									<% if(info != null) { %>
+        								 <h3>24시간 후: '${info.nick}'님의 혈액순환, 맥박, 혈압 등의 개선되어 심장마비 위험률이 감소했습니다. 다만, 우리 몸이 폐에 남은 가래를 청소하는
 										과정에서 발작적인 기침이 증가할 수 있습니다.</h3>
+         									<% } else { %>
+           									 <h3>24시간 후: 회원님의 혈액순환, 맥박, 혈압 등의 개선되어 심장마비 위험률이 감소했습니다. 다만, 우리 몸이 폐에 남은 가래를 청소하는
+										과정에서 발작적인 기침이 증가할 수 있습니다.</h3>
+         									<% } %>
 									<div class="progress-container">
 										<progress id="gauge4" value="0" max="8640"></progress>
 										<span id="percentDisplay4">0%</span>
@@ -219,9 +236,15 @@
 								</section>
 
 								<section class="border-line">
-									<h3>48시간 후: '${info.nick}'님의 코와 입에 있는 신경말단의 기능이 회복되면서 미각과 후각 등의 감각이 되살아 났습니다. 하지만 체내에 니코틴 수치가
+									<% if(info != null) { %>
+        								 <h3>48시간 후: '${info.nick}'님의 코와 입에 있는 신경말단의 기능이 회복되면서 미각과 후각 등의 감각이 되살아 났습니다. 하지만 체내에 니코틴 수치가
 										떨어지면서, 담배에 대한 욕구와 금단현상은 더 심해질수
 										있으니! 가족에 대한 사랑과 강한 의지로 이겨 내시길 바랍니다.!</h3>
+         									<% } else { %>
+           									 <h3>48시간 후: 회원님의 코와 입에 있는 신경말단의 기능이 회복되면서 미각과 후각 등의 감각이 되살아 났습니다. 하지만 체내에 니코틴 수치가
+										떨어지면서, 담배에 대한 욕구와 금단현상은 더 심해질수
+										있으니! 가족에 대한 사랑과 강한 의지로 이겨 내시길 바랍니다.!</h3>
+         									<% } %>
 									<div class="progress-container">
 										<progress id="gauge5" value="0" max="17280"></progress>
 										<span id="percentDisplay5">0%</span>
@@ -230,7 +253,11 @@
 								</section>
 
 								<section class="border-line">
-									<h3>72시간 후: '${info.nick}'님의 염증이 줄어들면서 폐 기능이 개선되고 기관지도 좀 더 편안해 질것입니다.</h3>
+									<% if(info != null) { %>
+        								 <h3>72시간 후: '${info.nick}'님의 염증이 줄어들면서 폐 기능이 개선되고 기관지도 좀 더 편안해 질것입니다.</h3>
+         									<% } else { %>
+           									 <h3>72시간 후: 회원님의 염증이 줄어들면서 폐 기능이 개선되고 기관지도 좀 더 편안해 질것입니다.</h3>
+         									<% } %>
 									<div class="progress-container">
 										<progress id="gauge6" value="0" max="25920"></progress>
 										<span id="percentDisplay6">0%</span>
@@ -239,7 +266,11 @@
 								</section>
 
 								<section class="border-line">
-									<h3>일주일 후: ' '님의 가래 생성이 줄고 폐 섬모도 점점 회복하면서 기침도 줄어들고, 니코틴에 대한 갈망이 다소 줄어들게 되었습니다.</h3>
+									<% if(info != null) { %>
+        								 <h3>일주일 후: '${info.nick}'님의 가래 생성이 줄고 폐 섬모도 점점 회복하면서 기침도 줄어들고, 니코틴에 대한 갈망이 다소 줄어들게 되었습니다.</h3>
+         									<% } else { %>
+           									 <h3>일주일 후: 회원님의 가래 생성이 줄고 폐 섬모도 점점 회복하면서 기침도 줄어들고, 니코틴에 대한 갈망이 다소 줄어들게 되었습니다.</h3>
+         									<% } %>
 									<div class="progress-container">
 										<progress id="gauge7" value="0" max="60480"></progress>
 										<span id="percentDisplay7">0%</span>
@@ -247,9 +278,15 @@
 
 								</section>
 								<section class="border-line">
-									<h3>한 달 후: '${info.nick}'님의 폐의 기능이 30% 이상 향상되었습니다. 운동을 하거나 장시간 걷는 과정이 좀 더 수월해진다는 것을 느낄 수 있을것이고,
+									<% if(info != null) { %>
+        								 <h3>한 달 후: '${info.nick}'님의 폐의 기능이 30% 이상 향상되었습니다. 운동을 하거나 장시간 걷는 과정이 좀 더 수월해진다는 것을 느낄 수 있을것이고,
 										니코틴에 대한 갈망과 발작적인 기침이 상당 부분
 										사라질 것입니다.</h3>
+         									<% } else { %>
+           									 <h3>한 달 후: 회원님의 폐의 기능이 30% 이상 향상되었습니다. 운동을 하거나 장시간 걷는 과정이 좀 더 수월해진다는 것을 느낄 수 있을것이고,
+										니코틴에 대한 갈망과 발작적인 기침이 상당 부분
+										사라질 것입니다.</h3>
+         									<% } %>
 									<div class="progress-container">
 										<progress id="gauge8" value="0" max="259200"></progress>
 										<span id="percentDisplay8">0%</span>
@@ -258,8 +295,13 @@
 								</section>
 
 								<section class="border-line">
-									<h3>6개월 후: '${info.nick}'님의 폐활량이 지속적으로 개선되면서 숨이 가쁘다는 느낌이 확연히 줄어들고, 일상생활에서 보다 에너지가 넘친다는 것을 느끼게
+									<% if(info != null) { %>
+        								 <h3>6개월 후: '${info.nick}'님의 폐활량이 지속적으로 개선되면서 숨이 가쁘다는 느낌이 확연히 줄어들고, 일상생활에서 보다 에너지가 넘친다는 것을 느끼게
 										된다.</h3>
+         									<% } else { %>
+           									 <h3>6개월 후: 회원님의 폐활량이 지속적으로 개선되면서 숨이 가쁘다는 느낌이 확연히 줄어들고, 일상생활에서 보다 에너지가 넘친다는 것을 느끼게
+										된다.</h3>
+         									<% } %>
 									<div class="progress-container">
 										<progress id="gauge9" value="0" max="1555200"></progress>
 										<span id="percentDisplay9">0%</span>
@@ -267,9 +309,15 @@
 								</section>
 
 								<section class="border-line">
-									<h3>12개월 후: '${info.nick}'님의 관상 동맥성 심장질환이 발생할 위험이 흡연자보다 50% 정도 줄어듭니다. 일상에서 사소하게 아픈 일이 줄어들고, 감기에
+									<% if(info != null) { %>
+        								 <h3>12개월 후: '${info.nick}'님의 관상 동맥성 심장질환이 발생할 위험이 흡연자보다 50% 정도 줄어듭니다. 일상에서 사소하게 아픈 일이 줄어들고, 감기에
 										걸릴 가능성도 줄며, 감기에 걸려도 이전보다
 										호흡기관의 불편이 덜하다는 것을 느낄 수 있을것입니다.</h3>
+         									<% } else { %>
+           									 <h3>12개월 후: 회원님의 관상 동맥성 심장질환이 발생할 위험이 흡연자보다 50% 정도 줄어듭니다. 일상에서 사소하게 아픈 일이 줄어들고, 감기에
+										걸릴 가능성도 줄며, 감기에 걸려도 이전보다
+										호흡기관의 불편이 덜하다는 것을 느낄 수 있을것입니다.</h3>
+         									<% } %>
 									<div class="progress-container">
 										<progress id="gauge10" value="0" max="3110400"></progress>
 										<span id="percentDisplay10">0%</span>
@@ -277,9 +325,15 @@
 								</section>
 
 								<section class="border-line">
-									<h3>10년 후: '${info.nick}'님의 폐 질환 위험률이 절반으로 줄어들었습니다.. 흡연은 혈액을 끈적거리게 만들고 동맥이 좁아지게 해 혈전이 생길 가능성을
+									<% if(info != null) { %>
+        								 <h3>10년 후: '${info.nick}'님의 폐 질환 위험률이 절반으로 줄어들었습니다.. 흡연은 혈액을 끈적거리게 만들고 동맥이 좁아지게 해 혈전이 생길 가능성을
 										높이는데, 10년간 니코틴으로부터 자유로워지면 반대로
 										동맥이 넓어지고 혈전이 생길 가능성도 줄어들어 뇌졸중 등의 위험이 감소할 것입니다.</h3>
+         									<% } else { %>
+           									 <h3>10년 후: 회원님의 폐 질환 위험률이 절반으로 줄어들었습니다.. 흡연은 혈액을 끈적거리게 만들고 동맥이 좁아지게 해 혈전이 생길 가능성을
+										높이는데, 10년간 니코틴으로부터 자유로워지면 반대로
+										동맥이 넓어지고 혈전이 생길 가능성도 줄어들어 뇌졸중 등의 위험이 감소할 것입니다.</h3>
+         									<% } %>
 									<div class="progress-container">
 										<progress id="gauge11" value="0" max="31104000"></progress>
 										<span id="percentDisplay11">0%</span>
@@ -287,7 +341,11 @@
 								</section>
 
 								<section class="border-line">
-									<h3>15년 후: '${info.nick}'님의 심장질환이나 심장마비로 사망할 위험률이 흡연 경험이 전혀 없는 사람과 비슷한 수준으로 떨어지게 되었습니다.</h3>
+									<% if(info != null) { %>
+        								 <h3>15년 후: '${info.nick}'님의 심장질환이나 심장마비로 사망할 위험률이 흡연 경험이 전혀 없는 사람과 비슷한 수준으로 떨어지게 되었습니다.</h3>
+         									<% } else { %>
+           									 <h3>15년 후: 회원님의 심장질환이나 심장마비로 사망할 위험률이 흡연 경험이 전혀 없는 사람과 비슷한 수준으로 떨어지게 되었습니다.</h3>
+         									<% } %>
 									<div class="progress-container">
 										<progress id="gauge12" value="0" max="46656000"></progress>
 										<span id="percentDisplay12">0%</span>
