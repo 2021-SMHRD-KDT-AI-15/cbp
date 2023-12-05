@@ -29,6 +29,17 @@ form {
 button {
 	margin-top: 10px;
 }
+
+button[name="btn2"] {
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+a {
+	text-decoration: none;
+}
 </style>
 </head>
 
@@ -91,9 +102,8 @@ button {
 										name="pw" placeholder="비밀번호를 입력하세요">
 								</div>
 								<input type="submit" value="로그인">
-							<button name="btn2">회원가입</button>
-								<a href="./Join.jsp"></a>
-								</form>
+							</form>
+							<a href="./Join.jsp"><button name="btn2">회원가입</button></a>
 						</div>
 					</div>
 				</div>

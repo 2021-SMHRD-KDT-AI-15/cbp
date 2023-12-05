@@ -67,16 +67,21 @@ html, body {
                         mySaveButton: {
                             text: "저장하기",
                             click: async function () {
-                                if (confirm("저장하시겠습니까?")){
-                                    var allEvent = calendar.getEvents();
-                                    const saveEvent = await axios({
-                                        metohd:"post",
-                                        url:"/calendar",
-                                        data: allEvent,
-                                    })
+                            	if (confirm("저장하시겠습니까?")) {
+                                    var allEvents = calendar.getEvents();
+                                    allEvents.forEach(async function (event) {
+                                        const saveEvent = await axios({
+                                            method: "post",
+                                            url: "/calendar",
+                                            data: {
+                                                title: event.title,
+                                                start: event.start,
+                                                end: event.end,
+                                                allDay: event.allDay
+                                            }
+                                        });
+                                    });
                                 }
-                            }
-                        }
                     },
                     headerToolbar: {
                         left: 'prev,next today,mySaveButton',
