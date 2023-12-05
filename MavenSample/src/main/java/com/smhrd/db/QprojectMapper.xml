@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.mapper.QprojectMapper">
+
+
+<!-- 금연 계획 테이블에 사용자의 값 넣기 -->
+  <insert id="put" parameterType="com.smhrd.model.QprojectDTO">
+    INSERT INTO q_project (email, s_day, p_day, today_s, p_start, p_end, p_count)
+    VALUES (#{email}, #{s_day}, #{p_day}, #{today_s}, #{p_start}, #{p_end}, #{p_count})
+  </insert>
+
+  <!-- 로그인한 사용자의 값 불러오기...?-->
+  <select id="come" parameterType="com.smhrd.model.QprojectDTO"
+		resultType="com.smhrd.model.QprojectDTO">
+		select * from q_project where email=#{email}
+	</select>
+
+</mapper>

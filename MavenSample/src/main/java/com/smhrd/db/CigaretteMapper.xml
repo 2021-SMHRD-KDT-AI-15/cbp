@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapper namespace="com.smhrd.model.CigaretteMapper">
+    <!-- 오늘 피운 담배의 갯수 증가하는 쿼리 -->
+    <update id="increaseCigaretteCount">
+        UPDATE user_statistics SET 
+        cigarette_count = cigarette_count + 1, 
+        s_daily = NVL(s_daily, 0) + 1
+        WHERE EMAIL = #{email} AND TO_CHAR(registered_date, 'YYYY-MM-DD') = TO_CHAR(SYSDATE, 'YYYY-MM-DD');
+    </update>
+
+    <!-- 오늘 피운 담배의 갯수를 조회하는 쿼리 -->
+    <select id="getDailyCigaretteCount" resultType="int">
+        SELECT NVL(s_daily, 0) 
+        FROM user_statistics 
+        WHERE EMAIL = #{email} AND TO_CHAR(registered_date, 'YYYY-MM-DD') = TO_CHAR(SYSDATE, 'YYYY-MM-DD');
+    </select>
+</mapper>

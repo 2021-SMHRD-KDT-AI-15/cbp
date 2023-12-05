@@ -21,8 +21,8 @@ public class WiseDAO {
         SqlSession sqlSession = sqlSessionFactory.openSession(true); 
 
         // 2. Sql에 대한 내용 필요!
-        WISE_list = (ArrayList) sqlSession.selectList("com.smhrd.db.MemberMapper.list"); // 수정된 부분
-
+        WISE_list = (ArrayList) sqlSession.selectList("list"); // 수정된 부분
+        //System.out.println(WISE_list);
         // 3. 결과를 진행할 내용 필요!
 
         // 4. DB접속 종료 내용 필요!
