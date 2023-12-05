@@ -6,7 +6,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import com.smhrd.db.SqlSessionManager;
 public class QprojectDAO {
 
-	
+	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getFactory();
 	// 정보들을 insert 하는 메소드
 	
 	public int put(QprojectDTO dto) {
@@ -26,7 +26,7 @@ public class QprojectDAO {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
 		// 2. sql 문장 호출 -> Mapper를 활용하여 호출!
-		Qproject dto = sqlSession.selectOne("come", email);
+		QprojectDTO dto = sqlSession.selectOne("come", email);
 		
 		// 3. sqlSession 종료
 		sqlSession.close();
