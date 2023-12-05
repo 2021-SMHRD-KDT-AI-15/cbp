@@ -19,6 +19,7 @@
 </head>
 
 <body class="homepage is-preload">
+<%MemberDTO info = (MemberDTO) session.getAttribute("info");%>
 	<div id="page-wrapper">
 		<!-- Header -->
 		<header id="header">
@@ -45,15 +46,19 @@
 			<li><a href="금연도움기관.html">금연 도움 기관</a></li>
 			<li><a href="/마이페이지.html">나의 건강정보</a></li>
 			<ul>
-				<li><a href="/마이페이지.html">마이페이지</a></li>
-				<li><a href="/금연일정관리.html">금연일정관리</a></li>
-				<li><a href="/신체변화.html">나의 신체변화</a></li>
+				         <% if(info != null) { %>
+            <li><a href="./Mypage.jsp">마이페이지</a></li>
+                  <li><a href="./Scalendar.jsp">금연일정관리</a></li>
+            <li><a href="./BodyChange.jsp">나의 신체변화</a></li>
+         <% } else { %>
+            <li><a href="./Login.jsp">마이페이지</a></li>
+                  <li><a href="./Login.jsp">금연일정관리</a></li>
+            <li><a href="./BodyChange.jsp">나의 신체변화</a></li>
+         <% } %>
 			</ul>
 
 			<li>
-							<%
-						MemberDTO info = (MemberDTO) session.getAttribute("info");
-						%>
+						
          <% if(info != null) { %>
             <a href="LogoutService">로그아웃</a>
          <% } else { %>
