@@ -2,6 +2,7 @@
    pageEncoding="UTF-8" isELIgnored="false"%>
    <%@page import="java.util.ArrayList"%>
     <%@page import="com.smhrd.model.WiseDTO"%>
+    <%@ page import="com.smhrd.model.MemberDTO" %>
 
 <!DOCTYPE HTML>
 <!--
@@ -58,7 +59,16 @@
                </ul>
             </li>
 
-         <li><a href="./Login.jsp">로그인</a></li>
+         <li>
+         				<%
+						MemberDTO info = (MemberDTO) session.getAttribute("info");
+						%>
+         <% if(info != null) { %>
+            <a href="LogoutService">로그아웃</a>
+         <% } else { %>
+            <a href="./Login.jsp">로그인</a>
+         <% } %>
+         </li>
 
 
          </ul>

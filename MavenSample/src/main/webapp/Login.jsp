@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" isELIgnored="false"%>
+	<%@ page import="com.smhrd.model.MemberDTO" %>
 <!DOCTYPE HTML>
 <!--
 	TXT by HTML5 UP
@@ -78,7 +79,16 @@ a {
 					<li><a href="./BodyChange.jsp">나의 신체변화</a></li>
 				</ul></li>
 
-			<li><a href="./Login.jsp">로그인</a></li>
+			<li>
+							<%
+						MemberDTO info = (MemberDTO) session.getAttribute("info");
+						%>
+         <% if(info != null) { %>
+            <a href="LogoutService">로그아웃</a>
+         <% } else { %>
+            <a href="./Login.jsp">로그인</a>
+         <% } %>
+			</li>
 
 
 			</ul>
