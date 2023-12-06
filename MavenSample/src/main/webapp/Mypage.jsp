@@ -59,44 +59,56 @@
 			</ul>
 		</nav>
 		<!-- Nav -->
-		<nav id="nav">
-			<ul>
-				<li class="current"><a href="./Main.jsp">홈</a></li>
-				<li>
-					<a href="./Sguide.jsp">금연 정보</a>
-					<ul>
-						<li><a href="./Sguide.jsp">금연 가이드</a></li>
-						<li><a href="./Snews.jsp">금연 뉴스</a></li>
-					</ul>
-				</li>
-				<li><a href="./Shospital.jsp">금연 도움 기관</a></li>
-				<li>
-					<a href="./Mypage.jsp">나의 건강정보</a>
-					<ul>
-						         <% if(info != null) { %>
+      <nav id="nav">
+         <ul>
+            <li class="current"><a href="./Main.jsp">홈</a></li>
+            <li>
+               <a href="./Sguide.jsp">금연 정보</a>
+               <ul>
+                  <li><a href="./Sguide.jsp">금연 가이드</a></li>
+                  <li><a href="./Snews.jsp">금연 뉴스</a></li>
+            </li>
+
+         </ul>
+         </li>
+         <li><a href="./Shospital.jsp">금연 도움 기관</a>
+         <ul>
+                  <li><a href="./Shospital.jsp">금연 관련기관</a></li>
+            </li>
+
+         </ul>
+         </li>
+         
+         
+                           <% if(info != null) { %>
+                           <li><a href="./Mypage.jsp">나의 건강정보</a>
+           <ul>
             <li><a href="./Mypage.jsp">마이페이지</a></li>
                   <li><a href="./Scalendar.jsp">금연일정관리</a></li>
             <li><a href="./BodyChange.jsp">나의 신체변화</a></li>
          <% } else { %>
+         <li><a href="./Login.jsp">나의 건강정보</a>
+           
+           <ul>
             <li><a href="./Login.jsp">마이페이지</a></li>
                   <li><a href="./Login.jsp">금연일정관리</a></li>
             <li><a href="./BodyChange.jsp">나의 신체변화</a></li>
          <% } %>
-					</ul>
-				</li>
+               </ul>
+            </li>
 
-				<li>
-								
+         <li>
+         				
          <% if(info != null) { %>
             <a href="LogoutService">로그아웃</a>
          <% } else { %>
             <a href="./Login.jsp">로그인</a>
          <% } %>
-				</li>
+         </li>
 
 
-			</ul>
-		</nav>
+         </ul>
+      </nav>
 
 		<!-- Main -->
 		<section id="main">
@@ -147,6 +159,34 @@
 								<header>
 									<h2>마이페이지</h2>
 									<p><strong>${info.nick}</strong>님 환영합니다 ${info1.p_day}일째입니다! 목표까지 ${40-info1.p_day}일 남았습니다. 파이팅!</p>
+									<h3>
+										<!--그동안 핀 담배 nn개
+										s_daily * (오늘 날짜 - s_date) -->
+									</h3>
+									<form name="frm" id="frm" action="" method="post">
+										<input type="hidden" name="csSignature"
+											value="iOkbEin8G+INaPL2QcMUwA==" /> <input type="hidden"
+											name="_csrf" value="f08b0ce0-8bc0-4141-9f17-924b685fd251" />
+										<input type="hidden" name="step" id="step" value="0" /> <input
+											type="hidden" name="stopDay" id="stopDay" value="" />
+									</form>
+									<div class="clock_infor">
+										<div class="clock1">
+											<p>
+												금연 <b>${info1.p_day}일</b><span>(금연시작일 : 2023년 12월 04일 )</span>
+											</p>
+										</div>
+										<div class="clock2">
+											<p>
+												<b>0일 7시간 20분</b>의 수명이 <span>연장되었습니다.</span>
+											</p>
+										</div>
+										<div class="clock3">
+											<p>
+												금연저금통에 <b>${info1.p_day*4500}원</b>이 <span>저금되었습니다.</span>
+											</p>
+										</div>
+									</div>
 								</header>
 							
 								<div class="div">
