@@ -31,6 +31,7 @@
 <body class="homepage is-preload">
 <%MemberDTO info = (MemberDTO) session.getAttribute("info");%>
    <div id="page-wrapper">
+   
       <!-- Nav -->
       <nav id="nav">
          <ul>
@@ -46,19 +47,23 @@
          </li>
          <li><a href="./Shospital.jsp">금연 도움 기관</a>
          <ul>
-                  <li align="center"><a href="./Public Health.jsp">보건소</a></li>
+                  <li><a href="./Shospital.jsp">금연 관련기관</a></li>
             </li>
 
          </ul>
          </li>
          
-         <li><a href="./Mypage.jsp">나의 건강정보</a>
-           <ul>
+         
                            <% if(info != null) { %>
+                           <li><a href="./Mypage.jsp">나의 건강정보</a>
+           <ul>
             <li><a href="./Mypage.jsp">마이페이지</a></li>
                   <li><a href="./Scalendar.jsp">금연일정관리</a></li>
             <li><a href="./BodyChange.jsp">나의 신체변화</a></li>
          <% } else { %>
+         <li><a href="./Login.jsp">나의 건강정보</a>
+           
+           <ul>
             <li><a href="./Login.jsp">마이페이지</a></li>
                   <li><a href="./Login.jsp">금연일정관리</a></li>
             <li><a href="./BodyChange.jsp">나의 신체변화</a></li>

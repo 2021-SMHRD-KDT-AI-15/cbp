@@ -59,44 +59,56 @@
 			</ul>
 		</nav>
 		<!-- Nav -->
-		<nav id="nav">
-			<ul>
-				<li class="current"><a href="./Main.jsp">홈</a></li>
-				<li>
-					<a href="./Sguide.jsp">금연 정보</a>
-					<ul>
-						<li><a href="./Sguide.jsp">금연 가이드</a></li>
-						<li><a href="./Snews.jsp">금연 뉴스</a></li>
-					</ul>
-				</li>
-				<li><a href="./Shospital.jsp">금연 도움 기관</a></li>
-				<li>
-					<a href="./Mypage.jsp">나의 건강정보</a>
-					<ul>
-						         <% if(info != null) { %>
+      <nav id="nav">
+         <ul>
+            <li class="current"><a href="./Main.jsp">홈</a></li>
+            <li>
+               <a href="./Sguide.jsp">금연 정보</a>
+               <ul>
+                  <li><a href="./Sguide.jsp">금연 가이드</a></li>
+                  <li><a href="./Snews.jsp">금연 뉴스</a></li>
+            </li>
+
+         </ul>
+         </li>
+         <li><a href="./Shospital.jsp">금연 도움 기관</a>
+         <ul>
+                  <li><a href="./Shospital.jsp">금연 관련기관</a></li>
+            </li>
+
+         </ul>
+         </li>
+         
+         
+                           <% if(info != null) { %>
+                           <li><a href="./Mypage.jsp">나의 건강정보</a>
+           <ul>
             <li><a href="./Mypage.jsp">마이페이지</a></li>
                   <li><a href="./Scalendar.jsp">금연일정관리</a></li>
             <li><a href="./BodyChange.jsp">나의 신체변화</a></li>
          <% } else { %>
+         <li><a href="./Login.jsp">나의 건강정보</a>
+           
+           <ul>
             <li><a href="./Login.jsp">마이페이지</a></li>
                   <li><a href="./Login.jsp">금연일정관리</a></li>
             <li><a href="./BodyChange.jsp">나의 신체변화</a></li>
          <% } %>
-					</ul>
-				</li>
+               </ul>
+            </li>
 
-				<li>
-								
+         <li>
+         				
          <% if(info != null) { %>
             <a href="LogoutService">로그아웃</a>
          <% } else { %>
             <a href="./Login.jsp">로그인</a>
          <% } %>
-				</li>
+         </li>
 
 
-			</ul>
-		</nav>
+         </ul>
+      </nav>
 
 		<!-- Main -->
 		<section id="main">

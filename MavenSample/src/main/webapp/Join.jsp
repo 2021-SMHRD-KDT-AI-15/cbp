@@ -44,13 +44,17 @@
 
 			</ul>
 			<li><a href="금연도움기관.html">금연 도움 기관</a></li>
-			<li><a href="/마이페이지.html">나의 건강정보</a></li>
-			<ul>
-				         <% if(info != null) { %>
+			
+				              <% if(info != null) { %>
+                           <li><a href="./Mypage.jsp">나의 건강정보</a>
+           <ul>
             <li><a href="./Mypage.jsp">마이페이지</a></li>
                   <li><a href="./Scalendar.jsp">금연일정관리</a></li>
             <li><a href="./BodyChange.jsp">나의 신체변화</a></li>
          <% } else { %>
+         <li><a href="./Login.jsp">나의 건강정보</a>
+           
+           <ul>
             <li><a href="./Login.jsp">마이페이지</a></li>
                   <li><a href="./Login.jsp">금연일정관리</a></li>
             <li><a href="./BodyChange.jsp">나의 신체변화</a></li>
