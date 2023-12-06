@@ -168,10 +168,19 @@ $(document).ready(function(){
 
 <div id="wise"></div>
 <!-- 추가: 담배 모양 아이콘 -->
-<div id="cigarette-icon" style="position: fixed; font-size: 30px; right: 70px; bottom: 20px; cursor: pointer;" >
+
+
+ <div id="cigarette-icon" style="position: fixed; font-size: 30px; right: 70px; bottom: 20px; cursor: pointer;" >
     <!-- 담배 아이콘 이미지를 사용하거나 다른 시각적인 디자인을 원하면 해당 부분을 수정 -->
     🚬 
-</div>
+</div> 
+<script>
+document.getElementById("cigarette-icon").addEventListener('click', function() {
+    fetch('CigaretteCounter', {
+        method: 'POST'
+    }); 
+});
+</script>
    <!-- Footer -->
    <footer id="footer">
       <div class="container">
