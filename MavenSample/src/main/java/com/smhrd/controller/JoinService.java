@@ -2,6 +2,7 @@ package com.smhrd.controller;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -49,13 +50,13 @@ public class JoinService extends HttpServlet {
 		int result1 = dao1.put(dto1);
 		// 5. 호출된 기능의 결과에 따라 화면 결과 출력
 
-//		if (result > 0) { // 회원가입에 성공했을 때 -> JoinSuccess.jsp 이동 -> nick 값 가져가야함
-//			request.setAttribute("nick", nick);
-//			RequestDispatcher rd = request.getRequestDispatcher("JoinSuccess.jsp");
-//			rd.forward(request, response);
-//		}else { // 회원가입에 실패했을 때
+		if (result > 0) { // 회원가입에 성공했을 때 -> JoinSuccess.jsp 이동 -> nick 값 가져가야함
+			request.setAttribute("nick", nick);
+			RequestDispatcher rd = request.getRequestDispatcher("JoinSuccess.jsp");
+			rd.forward(request, response);
+		}else { // 회원가입에 실패했을 때
 		response.sendRedirect("Main.jsp");
-//		}
+		}
 
 	}
 
