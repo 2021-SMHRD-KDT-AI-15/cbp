@@ -59,7 +59,7 @@ public class LoginService extends HttpServlet {
 			response.sendRedirect("Mypage.jsp");
 
 		} else {
-			response.sendRedirect("Login.jsp");
+			response.sendRedirect("LoginFail.jsp");
 			
 		}
 			
