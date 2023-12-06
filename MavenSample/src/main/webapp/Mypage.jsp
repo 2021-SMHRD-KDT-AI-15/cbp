@@ -147,6 +147,34 @@
 								<header>
 									<h2>마이페이지</h2>
 									<p><strong>${info.nick}</strong>님 환영합니다 ${info1.p_day}일째입니다! 목표까지 ${40-info1.p_day}일 남았습니다. 파이팅!</p>
+									<h3>
+										<!--그동안 핀 담배 nn개
+										s_daily * (오늘 날짜 - s_date) -->
+									</h3>
+									<form name="frm" id="frm" action="" method="post">
+										<input type="hidden" name="csSignature"
+											value="iOkbEin8G+INaPL2QcMUwA==" /> <input type="hidden"
+											name="_csrf" value="f08b0ce0-8bc0-4141-9f17-924b685fd251" />
+										<input type="hidden" name="step" id="step" value="0" /> <input
+											type="hidden" name="stopDay" id="stopDay" value="" />
+									</form>
+									<div class="clock_infor">
+										<div class="clock1">
+											<p>
+												금연 <b>${info1.p_day}일</b><span>(금연시작일 : 2023년 12월 04일 )</span>
+											</p>
+										</div>
+										<div class="clock2">
+											<p>
+												<b>0일 7시간 20분</b>의 수명이 <span>연장되었습니다.</span>
+											</p>
+										</div>
+										<div class="clock3">
+											<p>
+												금연저금통에 <b>${info1.p_day*4500}원</b>이 <span>저금되었습니다.</span>
+											</p>
+										</div>
+									</div>
 								</header>
 							
 								<div class="div">
