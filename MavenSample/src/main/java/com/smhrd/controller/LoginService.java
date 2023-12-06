@@ -48,6 +48,9 @@ public class LoginService extends HttpServlet {
 		QprojectDTO result1 = dao1.come(dto1);
 
 		// 로그인에 성공했다면 회원정보를 공유할 수 있도록 session 영역에 저장해 페이지 이동
+		
+		
+		
 		if (result != null) { // 로그인 성공
 			
 			HttpSession session = request.getSession();
@@ -55,7 +58,11 @@ public class LoginService extends HttpServlet {
 			session.setAttribute("info1", result1);
 			response.sendRedirect("Mypage.jsp");
 
+		} else {
+			response.sendRedirect("Login.jsp");
+			
 		}
+			
 
 
 	}
