@@ -45,12 +45,6 @@
 			background-color: #f0f0f0;
 			
 		}
-
-
-       
-
-
-       
     </style>
 </head>
 
@@ -107,8 +101,6 @@
             <a href="./Login.jsp">로그인</a>
          <% } %>
 				</li>
-
-
 			</ul>
 		</nav>
 
@@ -146,10 +138,6 @@
 								</ul>
 
 							</section>
-
-
-
-
 
 						</div>
 					</div>
@@ -354,10 +342,7 @@
 										<span id="percentDisplay12">0%</span>
 									</div>
 								</section>
-
-
 							</article>
-
 						</div>
 					</div>
 					<div class="col-12">
@@ -365,8 +350,7 @@
 						<!-- Features -->
 						<section class="box features">
 							<h2 class="major"><span>금연을 시작하는 당신의 선택</span></h2>
-
-
+							
 							<div class="col-12">
 								<ul class="actions">
 									
@@ -374,8 +358,6 @@
 									<li><a id="reset" class="button alt large" onclick="resetGauges()">초기화</a></li>
 								</ul>
 							</div>
-
-
 						</section>
 
 					</div>
@@ -414,15 +396,15 @@
         updateGauges('gauge1', 'percentDisplay1', 20); // 20분
         updateGauges('gauge2', 'percentDisplay2', 120); // 2시간
         updateGauges('gauge3', 'percentDisplay3', 720); // 12시간
-        updateGauges('gauge4', 'percentDisplay4', 720); // 12시간
-        updateGauges('gauge5', 'percentDisplay5', 720); // 12시간
-        updateGauges('gauge6', 'percentDisplay6', 720); // 12시간
-        updateGauges('gauge7', 'percentDisplay7', 720); // 12시간
-        updateGauges('gauge8', 'percentDisplay8', 720); // 12시간
-        updateGauges('gauge9', 'percentDisplay9', 720); // 12시간
-        updateGauges('gauge10', 'percentDisplay10', 720); // 12시간
-        updateGauges('gauge11', 'percentDisplay11', 720); // 12시간
-        updateGauges('gauge12', 'percentDisplay12', 720); // 12시간
+        updateGauges('gauge4', 'percentDisplay4', 1440); // 24시간
+        updateGauges('gauge5', 'percentDisplay5', 2880); // 48시간
+        updateGauges('gauge6', 'percentDisplay6', 4320); // 72시간
+        updateGauges('gauge7', 'percentDisplay7', 10080); // 일주일
+        updateGauges('gauge8', 'percentDisplay8', 43200); // 한달
+        updateGauges('gauge9', 'percentDisplay9', 259200); // 6개월
+        updateGauges('gauge10', 'percentDisplay10', 518400); // 12개월
+        updateGauges('gauge11', 'percentDisplay11', 5184000); // 10년
+        updateGauges('gauge12', 'percentDisplay12', 7776000); // 15년
     }
 
     function startGauges() {
@@ -439,6 +421,34 @@
 
             gaugeIntervals.push(setInterval(function() {
                 updateGauges('gauge3', 'percentDisplay3', 720, true); // 12시간
+            }, 1000));
+            
+            gaugeIntervals.push(setInterval(function() {
+                updateGauges('gauge4', 'percentDisplay4', 1440, true); 
+            }, 1000));
+            gaugeIntervals.push(setInterval(function() {
+                updateGauges('gauge5', 'percentDisplay5', 2880, true); 
+            }, 1000));
+            gaugeIntervals.push(setInterval(function() {
+                updateGauges('gauge6', 'percentDisplay6', 4320, true); 
+            }, 1000));
+            gaugeIntervals.push(setInterval(function() {
+                updateGauges('gauge7', 'percentDisplay7', 10080, true); 
+            }, 1000));
+            gaugeIntervals.push(setInterval(function() {
+                updateGauges('gauge8', 'percentDisplay8', 43200, true); 
+            }, 1000));
+            gaugeIntervals.push(setInterval(function() {
+                updateGauges('gauge9', 'percentDisplay9', 259200, true); 
+            }, 1000));
+            gaugeIntervals.push(setInterval(function() {
+                updateGauges('gauge10', 'percentDisplay10', 518400, true); 
+            }, 1000));
+            gaugeIntervals.push(setInterval(function() {
+                updateGauges('gauge11', 'percentDisplay11', 5184000, true); 
+            }, 1000));
+            gaugeIntervals.push(setInterval(function() {
+                updateGauges('gauge12', 'percentDisplay12', 7776000, true); 
             }, 1000));
         }
     }
