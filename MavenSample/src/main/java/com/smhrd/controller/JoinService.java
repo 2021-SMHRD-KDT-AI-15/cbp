@@ -46,7 +46,7 @@ public class JoinService extends HttpServlet {
 		MemberDTO dto = new MemberDTO(email, pw, nick, q_date, s_date, price, s_daily);
 		int result = dao.join(dto);
 
-		QprojectDTO dto1 = new QprojectDTO(email, q_date);
+		QprojectDTO dto1 = new QprojectDTO(email, p_start);
 		int result1 = dao1.put(dto1);
 		// 5. 호출된 기능의 결과에 따라 화면 결과 출력
 

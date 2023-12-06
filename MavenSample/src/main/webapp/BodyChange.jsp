@@ -384,122 +384,99 @@
 		</section>
 
 		<script>
-			var isGaugeStarted = false;
-			var gaugeIntervals = [];
+    var isGaugeStarted = false;
+    var gaugeIntervals = [];
+    var quitDate = new Date('${info.q_date}'); // 금연 시작 날짜
+    var userId = '${info.nick}'; // 사용자 ID
 
-			function startGauges() {
-				if (!isGaugeStarted) {
-					isGaugeStarted = true;
+    window.onload = function() {
+        // 로그인 되어있지 않을 때 게이지 값을 초기화
+        if (!userId) {
+            localStorage.removeItem('gauge1');
+            localStorage.removeItem('gauge2');
+            localStorage.removeItem('gauge3');
+            localStorage.removeItem('gauge4');
+            localStorage.removeItem('gauge5');
+            localStorage.removeItem('gauge6');
+            localStorage.removeItem('gauge7');
+            localStorage.removeItem('gauge8');
+            localStorage.removeItem('gauge9');
+            localStorage.removeItem('gauge10');
+            localStorage.removeItem('gauge11');
+            localStorage.removeItem('gauge12');
+        }
 
-					// 1초마다 게이지 업데이트
-					gaugeIntervals.push(setInterval(function () {
-						updateGauges('gauge1', 'percentDisplay1');
-					}, 1000));
+        initializeGauges();
+        startGauges();
+    }
 
-					gaugeIntervals.push(setInterval(function () {
-						updateGauges('gauge2', 'percentDisplay2');
-					}, 1000));
+    function initializeGauges() {
+        updateGauges('gauge1', 'percentDisplay1', 20); // 20분
+        updateGauges('gauge2', 'percentDisplay2', 120); // 2시간
+        updateGauges('gauge3', 'percentDisplay3', 720); // 12시간
+        updateGauges('gauge4', 'percentDisplay4', 720); // 12시간
+        updateGauges('gauge5', 'percentDisplay5', 720); // 12시간
+        updateGauges('gauge6', 'percentDisplay6', 720); // 12시간
+        updateGauges('gauge7', 'percentDisplay7', 720); // 12시간
+        updateGauges('gauge8', 'percentDisplay8', 720); // 12시간
+        updateGauges('gauge9', 'percentDisplay9', 720); // 12시간
+        updateGauges('gauge10', 'percentDisplay10', 720); // 12시간
+        updateGauges('gauge11', 'percentDisplay11', 720); // 12시간
+        updateGauges('gauge12', 'percentDisplay12', 720); // 12시간
+    }
 
-					gaugeIntervals.push(setInterval(function () {
-						updateGauges('gauge3', 'percentDisplay3');
-					}, 1000));
+    function startGauges() {
+        if (!isGaugeStarted) {
+            isGaugeStarted = true;
 
-					gaugeIntervals.push(setInterval(function () {
-						updateGauges('gauge4', 'percentDisplay4');
-					}, 1000));
+            gaugeIntervals.push(setInterval(function() {
+                updateGauges('gauge1', 'percentDisplay1', 20, true); // 20분
+            }, 1000));
 
-					gaugeIntervals.push(setInterval(function () {
-						updateGauges('gauge5', 'percentDisplay5');
-					}, 1000));
+            gaugeIntervals.push(setInterval(function() {
+                updateGauges('gauge2', 'percentDisplay2', 120, true); // 2시간
+            }, 1000));
 
-					gaugeIntervals.push(setInterval(function () {
-						updateGauges('gauge6', 'percentDisplay6');
-					}, 1000));
+            gaugeIntervals.push(setInterval(function() {
+                updateGauges('gauge3', 'percentDisplay3', 720, true); // 12시간
+            }, 1000));
+        }
+    }
 
-					gaugeIntervals.push(setInterval(function () {
-						updateGauges('gauge7', 'percentDisplay7');
-					}, 1000));
+    function updateGauges(gaugeId, percentDisplayId, minutesAfterQuit, incrementValue = false) {
+        var gauge = document.getElementById(gaugeId);
+        var storedValue = Number(localStorage.getItem(userId + gaugeId));
+        var minutesAfterQuit = diffMinutes(quitDate, new Date());
+        var maxProgress = Math.min(gauge.max, minutesAfterQuit);
 
-					gaugeIntervals.push(setInterval(function () {
-						updateGauges('gauge8', 'percentDisplay8');
-					}, 1000));
+        if(storedValue !== null) {
+            gauge.value = storedValue;
+        } else {
+            gauge.value = maxProgress;
+            localStorage.setItem(userId + gaugeId, gauge.value);
+        }
 
-					gaugeIntervals.push(setInterval(function () {
-						updateGauges('gauge9', 'percentDisplay9');
-					}, 1000));
+        if (incrementValue && gauge.value < gauge.max) {
+            gauge.value++;
+            localStorage.setItem(userId + gaugeId, gauge.value);
+        }
 
-					gaugeIntervals.push(setInterval(function () {
-						updateGauges('gauge10', 'percentDisplay10');
-					}, 1000));
+        updatePercentDisplay(percentDisplayId, gauge);
+    }
 
-					gaugeIntervals.push(setInterval(function () {
-						updateGauges('gauge11', 'percentDisplay11');
-					}, 1000));
+    function updatePercentDisplay(percentDisplayId, gauge) {
+        var percentDisplay = document.getElementById(percentDisplayId);
+        var percent = Math.round((gauge.value / gauge.max) * 100);
+        percentDisplay.textContent = percent + '%';
+    }
 
-					gaugeIntervals.push(setInterval(function () {
-						updateGauges('gauge12', 'percentDisplay12');
-					}, 1000));
-				}
-			}
+    function diffMinutes(dt1, dt2) {
+        var diff =(dt2.getTime() - dt1.getTime()) / 1000;
+        diff /= 60;
+        return Math.abs(Math.round(diff));
+    }
+</script>
 
-			function resetGauges() {
-				isGaugeStarted = false;
-				gaugeIntervals.forEach(clearInterval);
-
-				// 게이지 초기화
-				document.getElementById('gauge1').value = 0;
-				document.getElementById('gauge2').value = 0;
-				document.getElementById('gauge3').value = 0;
-				document.getElementById('gauge4').value = 0;
-				document.getElementById('gauge5').value = 0;
-				document.getElementById('gauge6').value = 0;
-				document.getElementById('gauge7').value = 0;
-				document.getElementById('gauge8').value = 0;
-				document.getElementById('gauge9').value = 0;
-				document.getElementById('gauge10').value = 0;
-				document.getElementById('gauge11').value = 0;
-				document.getElementById('gauge12').value = 0;
-
-				// 퍼센트 초기화
-				document.getElementById('percentDisplay1').textContent = '0%';
-				document.getElementById('percentDisplay2').textContent = '0%';
-				document.getElementById('percentDisplay3').textContent = '0%';
-				document.getElementById('percentDisplay4').textContent = '0%';
-				document.getElementById('percentDisplay5').textContent = '0%';
-				document.getElementById('percentDisplay6').textContent = '0%';
-				document.getElementById('percentDisplay7').textContent = '0%';
-				document.getElementById('percentDisplay8').textContent = '0%';
-				document.getElementById('percentDisplay9').textContent = '0%';
-				document.getElementById('percentDisplay10').textContent = '0%';
-				document.getElementById('percentDisplay11').textContent = '0%';
-				document.getElementById('percentDisplay12').textContent = '0%';
-			}
-
-			// 게이지 업데이트 함수
-			function updateGauges(gaugeId, percentDisplayId) {
-				var gauge = document.getElementById(gaugeId);
-				var currentValue = gauge.value;
-
-				// 최대값 가져오기
-				var maxValue = parseInt(gauge.getAttribute('max'));
-
-				// 계산된 증가량
-				var increaseAmount = 1;
-
-				// 현재 게이지 값 업데이트
-				if (currentValue + increaseAmount <= maxValue) {
-					gauge.value = currentValue + increaseAmount;
-					updatePercentDisplay(percentDisplayId, gauge);
-				}
-			}
-
-			// 퍼센트 숫자 업데이트 함수
-			function updatePercentDisplay(percentDisplayId, gauge) {
-				var percentDisplay = document.getElementById(percentDisplayId);
-				var percent = Math.round((gauge.value / gauge.max) * 100);
-				percentDisplay.textContent = percent + '%';
-			}
-		</script>
 
 		<!-- Footer -->
 		<footer id="footer">
