@@ -1,5 +1,10 @@
 package com.smhrd.model;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -10,7 +15,7 @@ public class MemberDAO {
 	// web_member 테이블을 실제로 접근해 sql을 수행할 수 있는 클래스 -> DB에 접근해서 사용하겠다
 	
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getFactory();
-	
+
 	// 회원가입 메소드
 	public int join(MemberDTO dto) {
 		
@@ -23,12 +28,24 @@ public class MemberDAO {
 		
 		int cnt = sqlSession.insert("join", dto);
 		
+		
+		
 		// 3. sqlSession 반납 -> 종료
 		
 		sqlSession.close();
 		
 		return cnt;
 	}
+	
+	// 회원가입 체크 메소드
+	public int check(MemberDTO dto) {
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		int cnt = sqlSession.selectOne("check", dto);
+		sqlSession.close();
+		return cnt;
+	}
+	
+	
 	
 	// 로그인 메소드
 	public MemberDTO login(MemberDTO dto) {

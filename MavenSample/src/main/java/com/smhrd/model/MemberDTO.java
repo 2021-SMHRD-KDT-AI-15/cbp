@@ -28,6 +28,11 @@ public class MemberDTO {
 		this.pw = pw;
 	}
 	
+	
+	public MemberDTO(String email) {
+		this.email = email;
+	}
+	
 	public MemberDTO() {
 		
 	}

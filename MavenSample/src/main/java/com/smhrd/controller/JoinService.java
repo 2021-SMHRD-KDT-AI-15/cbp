@@ -42,21 +42,23 @@ public class JoinService extends HttpServlet {
 		QprojectDAO dao1 = new QprojectDAO();
 
 		// 4. DAO의 회원가입 기능(메소드) 호출
+		MemberDTO dto2 = new MemberDTO(email);
+		int result2 = dao.check(dto2);
 
-		MemberDTO dto = new MemberDTO(email, pw, nick, q_date, s_date, price, s_daily);
-		int result = dao.join(dto);
+		if (result2 != 0) {
+			response.sendRedirect("JoinFail.jsp");
+		} else {
+			MemberDTO dto = new MemberDTO(email, pw, nick, q_date, s_date, price, s_daily);
+			int result = dao.join(dto);
 
-		QprojectDTO dto1 = new QprojectDTO(email, p_start);
-		int result1 = dao1.put(dto1);
-		// 5. 호출된 기능의 결과에 따라 화면 결과 출력
-
-		if (result > 0) { // 회원가입에 성공했을 때 -> JoinSuccess.jsp 이동 -> nick 값 가져가야함
+			QprojectDTO dto1 = new QprojectDTO(email, p_start);
+			int result1 = dao1.put(dto1);
 			request.setAttribute("nick", nick);
 			RequestDispatcher rd = request.getRequestDispatcher("JoinSuccess.jsp");
 			rd.forward(request, response);
-		}else { // 회원가입에 실패했을 때
-		response.sendRedirect("Main.jsp");
 		}
+
+		// 5. 호출된 기능의 결과에 따라 화면 결과 출력
 
 	}
 

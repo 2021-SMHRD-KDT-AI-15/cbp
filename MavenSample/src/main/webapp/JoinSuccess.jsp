@@ -7,13 +7,20 @@
       <meta charset="UTF-8" />
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <link rel="stylesheet" href="assets/css/main.css" />
-      
-   </head>
-   <style>
+      <style>
       #Update > ul.actions {
          margin-top:10%;
       }
+      
+      #hello {
+      font-size:100px; text-align: center;
+      }
+      #hello1{
+      font-size:80px; text-align: center;
+      }
+      
    </style>
+   </head>
    <body style="text-align: center;">
 
       <!-- Wrapper -->
@@ -21,14 +28,16 @@
             <!-- Menu -->
                <nav id="Update">   
                   <ul class="actions vertical">
-                     <li><h1>환영합니다!</h1></li>
-                     <li>회원가입을 축하합니다.</li>
-                     <!-- Q2. 회원가입 한 회원정보 중 이메일을 출력하시오.(request영역 활용) -->
-                     <%
-                     	 String nick = (String) request.getAttribute("nick");
+                  <%
+                    String nick = (String)request.getAttribute("nick");
                      %>
+                     <h1 id= hello > <%=nick%>님! 환영합니다!</h1>
                      
-                     <li>메세지시스템의 새로운 이메일은 <%=nick%>입니다.</li>
+                     <li id= hello1>금연 여행을 시작합니다.</li>
+                     <!-- Q2. 회원가입 한 회원정보 중 이메일을 출력하시오.(request영역 활용) -->
+                     
+                     
+                     <br><br><br><br>
                      <li><button onclick='location.href="Main.jsp"'>시작하기</button></li>
                   </ul>
                </nav>         
