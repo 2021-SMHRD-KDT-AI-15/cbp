@@ -56,7 +56,7 @@ public class LoginService extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("info", result);
 			session.setAttribute("info1", result1);
-			response.sendRedirect("Mypage.jsp");
+			response.sendRedirect("LoginSuccess.jsp");
 
 		} else {
 			response.sendRedirect("LoginFail.jsp");
