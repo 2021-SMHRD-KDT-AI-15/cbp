@@ -35,7 +35,7 @@
                      
                      
                      <br><br><br><br>
-                     <li><button onclick='location.href="Main.jsp"'>시작하기</button></li>
+                     <li><button onclick='location.href="Mypage.jsp"'>시작하기</button></li>
                   </ul>
                </nav>         
          </div>
