@@ -44,6 +44,13 @@ html, body {
 	overflow: hidden;
 }
 
+ /* 아이콘 스타일 */
+    #wise button {
+    	background-color:red;
+        font-size: 2em; /* 원하는 크기로 조절하세요 */
+        text-decoration: none; /* 링크에 있는 밑줄 제거 */
+    }
+
 #calendar-container {
 	width: 1200px;
 	max-height: 100vh;
@@ -72,6 +79,7 @@ html, body {
 
 <!-- -----------------------끝---------------- -->
 </head>
+
 
 <body class="is-preload">
 <%MemberDTO info = (MemberDTO) session.getAttribute("info");%>
@@ -146,6 +154,7 @@ html, body {
                </ul>
             </li>
 
+
          <li>
          				
          <% if(info != null) { %>
@@ -201,8 +210,49 @@ html, body {
 								</ul>
 
 							</section>
+							 <script>
+$(document).ready(function(){
+    $.ajax({
+        url: 'WiseService',
+        dataType: 'json',
+        type: 'GET',
+        success: function(data) {
+            var i = 0;
+            setInterval(function(){
+                if(i >= data.length) i = 0;
+                $("#wise").text(data[i].WISE); // 수정: 'WISE' 필드를 text로 설정합니다.
+                i++;
+            }, 60000);
+        }
+    });
 
+    // 담배 아이콘 클릭 이벤트 핸들러
+    $("#cigarette-icon").click(function() {
+        // 서버로 클릭 이벤트 전송
+        $.ajax({
+            url: 'CigaretteCounter', // 서버에서 처리할 URL을 지정
+            type: 'POST', // 클릭 이벤트를 서버로 전송할 때는 POST 메서드 사용
+            success: function(response) {
+                console.log("Cigarette count increased");
+            },
+            error: function(error) {
+                console.error("Error increasing cigarette count", error);
+            }
+        });
+    });
+});
+</script>
 
+<div id="wise">
+<!-- 추가: 담배 모양 아이콘 -->
+<% if(info != null) { %>
+            <button><a href="smoking_button"> 🚬 </a></button>
+         <% } else { %>
+            <button><a href="#"> 🚬 </a></button>
+         <% } %>
+
+  
+</div>
 
 						</div>
 					</div>

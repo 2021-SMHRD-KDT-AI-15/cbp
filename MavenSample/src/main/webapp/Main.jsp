@@ -167,7 +167,7 @@ $(document).ready(function(){
 });
 </script>
 
-<div id="wise">
+<%-- <div id="wise">
 <!-- 추가: 담배 모양 아이콘 -->
 <% if(info != null) { %>
             <button><a href="smoking_button"> 🚬 </a></button>
@@ -176,7 +176,7 @@ $(document).ready(function(){
          <% } %>
 
   
-</div>
+</div> --%>
    <!-- Footer -->
    <footer id="footer">
       <div class="container">

@@ -10,7 +10,7 @@
   </insert>
   
   <insert id="ciga" parameterType="com.smhrd.model.QprojectDTO">
-  	insert into ciga values (#{email}, #{p_start}, 0)
+  	insert into CIGA values (#{email}, #{p_start}, 0)
   </insert>
 
   <!-- 로그인한 사용자의 값 불러오기...?-->
@@ -18,9 +18,10 @@
 		resultType="com.smhrd.model.QprojectDTO">
 		select * from q_project where email=#{email}
 	</select>
+	
 	<!-- 로그인한 사용자의 흡연량 체크  -->
 	<update id="smoking" parameterType="com.smhrd.model.MemberDTO">
-		UPDATE q_project SET today_s=today_s+1 WHERE email=#{email}
+		UPDATE CIGA SET today_s=today_s+1 WHERE email= #{email}
 	</update>
 
 </mapper>

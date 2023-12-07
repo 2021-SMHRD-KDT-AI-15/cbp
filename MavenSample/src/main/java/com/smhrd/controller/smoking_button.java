@@ -62,7 +62,7 @@ public class smoking_button extends HttpServlet {
 		
 		if(result > 0) {
 			System.out.println("카운팅 성공");
-			response.sendRedirect("Main.jsp");
+			response.sendRedirect("buttonSuccess.jsp");
 		}else {
 			System.out.println("카운팅 실패");
 		}
