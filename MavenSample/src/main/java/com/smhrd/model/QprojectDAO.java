@@ -43,5 +43,18 @@ public class QprojectDAO {
 		sqlSession.close();
 		return result;
 	}
+	
+	//특정 사용자의 흡연을 추가하는 메소드
+		public int smoking (String email) {
+			
+			System.out.println("실행 : " + email);
+			SqlSession sqlSession = sqlSessionFactory.openSession(true);
+			int result = sqlSession.update("smoking", email);
+			System.out.println("결과 : " + result);
+			sqlSession.close();
+			return result;
+			
+			
+		}
 }
 		
