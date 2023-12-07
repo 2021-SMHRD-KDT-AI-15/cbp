@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
    <head>
-      <title>Forty by HTML5 UP</title>
+      <title>금연 여행</title>
       <meta charset="UTF-8" />
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <link rel="stylesheet" href="assets/css/main.css" />
@@ -31,8 +31,6 @@
                      <h1 id= hello > ${info.nick}님! 환영합니다!</h1>
                      
                      <li id= hello1>금연 여행을 시작합니다.</li>
-                     <!-- Q2. 회원가입 한 회원정보 중 이메일을 출력하시오.(request영역 활용) -->
-                     
                      
                      <br><br><br><br>
                      <li><button onclick='location.href="Mypage.jsp"'>시작하기</button></li>

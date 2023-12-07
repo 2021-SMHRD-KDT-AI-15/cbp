@@ -182,17 +182,6 @@ a {
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
 
-		<!--Q4. 클릭 시 페이지 이동-->
-		<script>
-			let btn1 = document.getElementByName("btn1")
-			btn1.addEventListener("click", function() {
-				location.href = "./calendar.jsp";
-			})
-			let btn2 = document.getElementByName("btn2")
-			btn2.addEventListener("click", function() {
-				location.href = "./Join.jsp";
-			})
-		</script>
 </body>
 
 </html>

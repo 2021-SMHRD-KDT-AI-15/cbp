@@ -12,7 +12,5 @@
         // Join.jsp 페이지로 리다이렉트
         window.location.href = "Login.jsp";
     </script>
-
-
 </body>
 </html>

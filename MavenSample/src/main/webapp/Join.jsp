@@ -193,26 +193,6 @@
 			document.getElementById('currentDate').value = new Date()
 					.toISOString().substring(0, 10);
 		</script>
-
-		<!-- Q4. js(가입 성공/실패, 초기화 시) 안 먹히면 삭제해도 될 것 같아용...  -->
-		<script>
-			$("submit").on(
-					"click",
-					function() {
-						if (!join.value == null || join.value == ""
-								|| join.value == undefined) {
-							alert("회원 가입에 성공하였습니다!");
-							location.replace("/Main.jsp");
-
-						} else {
-							alert("회원 가입에 실패하였습니다!");
-							location.reload();
-						}
-					})
-			$("reset").on("click", function() {
-				alert("초기화 되었습니다!");
-			})
-		</script>
 </body>
 
 </html>

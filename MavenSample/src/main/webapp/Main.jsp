@@ -88,8 +88,7 @@
       <!-- Banner -->
       <section id="banner">
          <div class="content">
-            <video src="./forest_-_9796(1080p).mp4" type="video/mp4" muted autoplay loop>   
-            
+            <video src="assets/css/images/forest_-_9796(1080p).mp4" type="video/mp4" muted autoplay loop>   
          </div>
       </section>
 
@@ -125,15 +124,8 @@
                         </p>
                      </ul>
                      <header>
-
                </div>
-         
          </div>
-      </section>
-
-   </div>
-
-
    <script>
 $(document).ready(function(){
     $.ajax({
@@ -167,16 +159,6 @@ $(document).ready(function(){
 });
 </script>
 
-<%-- <div id="wise">
-<!-- 추가: 담배 모양 아이콘 -->
-<% if(info != null) { %>
-            <button><a href="smoking_button"> 🚬 </a></button>
-         <% } else { %>
-            <button><a href="#"> 🚬 </a></button>
-         <% } %>
-
-  
-</div> --%>
    <!-- Footer -->
    <footer id="footer">
       <div class="container">
@@ -194,8 +176,6 @@ $(document).ready(function(){
 
             </div>
             <div class="col-12">
-
-
 
             </div>
          </div>

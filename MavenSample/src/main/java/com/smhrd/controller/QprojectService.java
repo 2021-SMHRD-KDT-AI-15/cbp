@@ -22,9 +22,7 @@ public class QprojectService extends HttpServlet {
 
 		// 2. 요청값이 보내주는 데이터 꺼내오기
 		String email = request.getParameter("email");
-		int s_day = Integer.parseInt(request.getParameter("s_day"));
 		int p_day = Integer.parseInt(request.getParameter("p_day"));
-		int today_s = Integer.parseInt(request.getParameter("today_s"));
 		String p_start = request.getParameter("p_start");
 		String p_end = request.getParameter("p_end");
 		int p_count = Integer.parseInt(request.getParameter("p_count"));

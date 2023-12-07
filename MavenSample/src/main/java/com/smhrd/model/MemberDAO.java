@@ -28,8 +28,6 @@ public class MemberDAO {
 		
 		int cnt = sqlSession.insert("join", dto);
 		
-		
-		
 		// 3. sqlSession 반납 -> 종료
 		
 		sqlSession.close();
@@ -44,8 +42,6 @@ public class MemberDAO {
 		sqlSession.close();
 		return cnt;
 	}
-	
-	
 	
 	// 로그인 메소드
 	public MemberDTO login(MemberDTO dto) {

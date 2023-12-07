@@ -211,21 +211,6 @@ html, body {
 
 							</section>
 							 <script>
-$(document).ready(function(){
-    $.ajax({
-        url: 'WiseService',
-        dataType: 'json',
-        type: 'GET',
-        success: function(data) {
-            var i = 0;
-            setInterval(function(){
-                if(i >= data.length) i = 0;
-                $("#wise").text(data[i].WISE); // 수정: 'WISE' 필드를 text로 설정합니다.
-                i++;
-            }, 60000);
-        }
-    });
-
     // 담배 아이콘 클릭 이벤트 핸들러
     $("#cigarette-icon").click(function() {
         // 서버로 클릭 이벤트 전송
@@ -240,7 +225,6 @@ $(document).ready(function(){
             }
         });
     });
-});
 </script>
 
 <div id="wise">
@@ -287,6 +271,7 @@ $(document).ready(function(){
 									// 날짜만 추출하기
 									var todayDateOnly = today.toISOString().substring(0, 10);
 									var tomoDateOnly = tomo.toISOString().substring(0, 10);
+									
 								</script>
 
 								<script>
@@ -351,9 +336,6 @@ $(document).ready(function(){
 										});
 									})();
 								</script>
-
-
-
 								<!-- ---------------------------------------------------------------------------여기까지------------------------------------------------------------------------ -->
 						</div>
 					</div>

@@ -2,26 +2,26 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.smhrd.mapper.QprojectMapper">
 
+	<!-- 금연 계획 테이블에 사용자의 값 넣기 -->
+	<insert id="put" parameterType="com.smhrd.model.QprojectDTO">
+		INSERT INTO q_project (email, p_day, p_start, p_end, p_count)
+		VALUES (#{email}, 1, #{p_start}, to_date(#{p_start}, 'YYYY-MM-DD') +
+		(interval '40' day), 1)
+	</insert>
 
-<!-- 금연 계획 테이블에 사용자의 값 넣기 -->
-  <insert id="put" parameterType="com.smhrd.model.QprojectDTO">
-    INSERT INTO q_project (email, p_day, p_start, p_end, p_count)
-    VALUES (#{email}, 1, #{p_start}, to_date(#{p_start}, 'YYYY-MM-DD') + (interval '40' day), 1)
-  </insert>
-  
-  <insert id="ciga" parameterType="com.smhrd.model.QprojectDTO">
-  	insert into CIGA values (#{email}, #{p_start}, 0)
-  </insert>
-
-  <!-- 로그인한 사용자의 값 불러오기...?-->
-  <select id="come" parameterType="com.smhrd.model.QprojectDTO"
+	<insert id="ciga" parameterType="com.smhrd.model.QprojectDTO">
+		insert into CIGA values (#{email}, #{p_start}, 0)
+	</insert>
+	
+	 <select id="come" parameterType="com.smhrd.model.QprojectDTO"
 		resultType="com.smhrd.model.QprojectDTO">
 		select * from q_project where email=#{email}
 	</select>
-	
-	<!-- 로그인한 사용자의 흡연량 체크  -->
+
+	<!-- 로그인한 사용자의 흡연량 체크 -->
 	<update id="smoking" parameterType="com.smhrd.model.MemberDTO">
-		UPDATE CIGA SET today_s=today_s+1 WHERE email= #{email}
+		UPDATE CIGA SET
+		today_s=today_s+1 WHERE email= #{email}
 	</update>
 
 </mapper>

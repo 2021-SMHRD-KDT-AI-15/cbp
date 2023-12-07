@@ -162,8 +162,6 @@
 
 							</section>
 
-
-
 						</div>
 					</div>
 					<div class="col-9 col-12-medium imp-medium">
@@ -249,8 +247,6 @@
 
 					</div>
 
-
-
 				</div>
 
 				<!-- Copyright -->
@@ -266,6 +262,7 @@
 
 	</div>
 	<script>
+	
 		var today = new Date('${info1.p_start}');
 		var todayDateOnly = today.toISOString().substring(0, 10);
 		document.getElementById("demo").innerHTML = todayDateOnly;
