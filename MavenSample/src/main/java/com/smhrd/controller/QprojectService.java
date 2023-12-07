@@ -33,7 +33,7 @@ public class QprojectService extends HttpServlet {
 		QprojectDAO dao = new QprojectDAO();
 
 		// 4. DAO의 전반적인 내용 호출
-		QprojectDTO dto = new QprojectDTO(email, s_day, p_day, today_s, p_start, p_end, p_count);
+		QprojectDTO dto = new QprojectDTO(email, p_day, p_start, p_end, p_count);
 		int result = dao.put(dto);
 	}
 

@@ -222,18 +222,7 @@
 											alt=""></span>
 									</section>
 								</div>
-								<section>
-									<h3>그동안 핀 담배</h3>
-
-									<span class="#"><img
-										src="https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/47bq/image/fdbRiA7cIAIbw7SV1B0QYpmkEHk.jpeg"
-										width="400px" height="600px"></span>
-
-								</section>
-
-
 							</article>
-
 						</div>
 					</div>
 

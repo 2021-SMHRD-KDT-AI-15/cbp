@@ -246,7 +246,7 @@ $(document).ready(function(){
 <div id="wise">
 <!-- 추가: 담배 모양 아이콘 -->
 <% if(info != null) { %>
-            <button><a href="smoking_button"> 🚬 </a></button>
+            <a href="smoking_button"><button> 🚬 </button></a>
          <% } else { %>
             <button><a href="#"> 🚬 </a></button>
          <% } %>

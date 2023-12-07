@@ -5,8 +5,8 @@
 
 <!-- 금연 계획 테이블에 사용자의 값 넣기 -->
   <insert id="put" parameterType="com.smhrd.model.QprojectDTO">
-    INSERT INTO q_project (email, s_day, p_day, today_s, p_start, p_end, p_count)
-    VALUES (#{email}, 0, 1, 0, #{p_start}, to_date(#{p_start}, 'YYYY-MM-DD') + (interval '40' day), 1)
+    INSERT INTO q_project (email, p_day, p_start, p_end, p_count)
+    VALUES (#{email}, 1, #{p_start}, to_date(#{p_start}, 'YYYY-MM-DD') + (interval '40' day), 1)
   </insert>
   
   <insert id="ciga" parameterType="com.smhrd.model.QprojectDTO">

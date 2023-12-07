@@ -10,7 +10,7 @@
 	<script>
         alert("회원가입 성공!");
         // Join.jsp 페이지로 리다이렉트
-        window.location.href = "Mypage.jsp";
+        window.location.href = "Main.jsp";
     </script>
 
 
