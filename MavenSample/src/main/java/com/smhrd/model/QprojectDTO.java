@@ -28,7 +28,12 @@ public class QprojectDTO {
 		this.email = email;
 		this.p_start = p_start;
 	}
-	
+	public QprojectDTO(String email, int today_s) {
+		
+		this.email = email;
+		this.today_s = today_s;
+	}
+
 	public QprojectDTO() {
 		
 	}
