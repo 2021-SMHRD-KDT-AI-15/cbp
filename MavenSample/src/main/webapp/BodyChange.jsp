@@ -72,6 +72,7 @@
 					<ul>
 						<li><a href="./Sguide.jsp">금연 가이드</a></li>
 						<li><a href="./Snews.jsp">금연 뉴스</a></li>
+						<li><a href="./Schatbot.jsp">가이드와의 대화</a></li>
 					</ul>
 				</li>
 				<li><a href="./Shospital.jsp">금연 도움 기관</a></li>

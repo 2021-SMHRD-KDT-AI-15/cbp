@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ page import="java.sql.*"%>
 <%@ page import="javax.sql.*"%>
-<%@ page import="com.smhrd.model.MemberDTO" %>
+<%@ page import="com.smhrd.model.MemberDTO"%>
 
 <!DOCTYPE html>
 <html>
@@ -36,7 +36,9 @@ th {
 </head>
 
 <body class="is-preload">
-<%MemberDTO info = (MemberDTO) session.getAttribute("info");%>
+	<%
+	MemberDTO info = (MemberDTO) session.getAttribute("info");
+	%>
 	<div id="page-wrapper">
 
 		<!-- Header -->
@@ -51,58 +53,63 @@ th {
 			</div>
 		</header>
 
-<!-- 여기서부터 고치면 될듯  -->
+		<!-- 여기서부터 고치면 될듯  -->
 		<!-- Nav -->
-      <nav id="nav">
-         <ul>
-            <li class="current"><a href="./Main.jsp">홈</a></li>
-            <li>
-               <a href="./Sguide.jsp">금연 정보</a>
-               <ul>
-                  <li><a href="./Sguide.jsp">금연 가이드</a></li>
-                  <li><a href="./Snews.jsp">금연 뉴스</a></li>
-            </li>
+		<nav id="nav">
+			<ul>
+				<li class="current"><a href="./Main.jsp">홈</a></li>
+				<li><a href="./Sguide.jsp">금연 정보</a>
+					<ul>
+						<li><a href="./Sguide.jsp">금연 가이드</a></li>
+						<li><a href="./Snews.jsp">금연 뉴스</a></li>
+						<li><a href="./Schatbot.jsp">가이드와의 대화</a></li></li>
 
-         </ul>
-         </li>
-         <li><a href="./Shospital.jsp">금연 도움 기관</a>
-         <ul>
-                  <li><a href="./Shospital.jsp">금연 관련기관</a></li>
-            </li>
+			</ul>
+			</li>
+			<li><a href="./Shospital.jsp">금연 도움 기관</a>
+				<ul>
+					<li><a href="./Shospital.jsp">금연 관련기관</a></li></li>
 
-         </ul>
-         </li>
-         
-         
-                           <% if(info != null) { %>
-                           <li><a href="./Mypage.jsp">나의 건강정보</a>
-           <ul>
-            <li><a href="./Mypage.jsp">마이페이지</a></li>
-                  <li><a href="./Scalendar.jsp">금연일정관리</a></li>
-            <li><a href="./BodyChange.jsp">나의 신체변화</a></li>
-         <% } else { %>
-         <li><a href="./Login.jsp">나의 건강정보</a>
-           
-           <ul>
-            <li><a href="./Login.jsp">마이페이지</a></li>
-                  <li><a href="./Login.jsp">금연일정관리</a></li>
-            <li><a href="./BodyChange.jsp">나의 신체변화</a></li>
-         <% } %>
-               </ul>
-            </li>
-
-         <li>
-         				
-         <% if(info != null) { %>
-            <a href="LogoutService">로그아웃</a>
-         <% } else { %>
-            <a href="./Login.jsp">로그인</a>
-         <% } %>
-         </li>
+			</ul>
+			</li>
 
 
-         </ul>
-      </nav>
+			<%
+			if (info != null) {
+			%>
+			<li><a href="./Mypage.jsp">나의 건강정보</a>
+				<ul>
+					<li><a href="./Mypage.jsp">마이페이지</a></li>
+					<li><a href="./Scalendar.jsp">금연일정관리</a></li>
+					<li><a href="./BodyChange.jsp">나의 신체변화</a></li>
+					<%
+					} else {
+					%>
+					<li><a href="./Login.jsp">나의 건강정보</a>
+
+						<ul>
+							<li><a href="./Login.jsp">마이페이지</a></li>
+							<li><a href="./Login.jsp">금연일정관리</a></li>
+							<li><a href="./BodyChange.jsp">나의 신체변화</a></li>
+							<%
+							}
+							%>
+						</ul></li>
+
+					<li>
+						<%
+						if (info != null) {
+						%> <a href="LogoutService">로그아웃</a> <%
+ } else {
+ %>
+						<a href="./Login.jsp">로그인</a> <%
+ }
+ %>
+					</li>
+
+
+				</ul>
+		</nav>
 		<!-- Main -->
 		<section id="main">
 			<div class="container">
@@ -134,6 +141,17 @@ th {
 
 										</article>
 									</li>
+									<li>
+										<article class="box post-summary">
+											<h3>
+												<a href="./Schatbot.jsp">가이드와의 대화</a>
+											</h3>
+
+										</article>
+									</li>
+
+
+
 
 								</ul>
 
