@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -28,10 +28,7 @@
             <!-- Menu -->
                <nav id="Update">   
                   <ul class="actions vertical">
-                  <%
-                    String nick = (String)request.getAttribute("nick");
-                     %>
-                     <h1 id= hello > <%=nick%>님! 환영합니다!</h1>
+                     <h1 id= hello > ${info.nick}님! 환영합니다!</h1>
                      
                      <li id= hello1>금연 여행을 시작합니다.</li>
                      <!-- Q2. 회원가입 한 회원정보 중 이메일을 출력하시오.(request영역 활용) -->
