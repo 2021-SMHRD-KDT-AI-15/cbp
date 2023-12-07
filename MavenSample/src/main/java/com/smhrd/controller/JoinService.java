@@ -53,6 +53,7 @@ public class JoinService extends HttpServlet {
 
 			QprojectDTO dto1 = new QprojectDTO(email, p_start);
 			int result1 = dao1.put(dto1);
+			int result3 = dao1.ciga(dto1);
 			request.setAttribute("nick", nick);
 			RequestDispatcher rd = request.getRequestDispatcher("JoinSuccess.jsp");
 			rd.forward(request, response);

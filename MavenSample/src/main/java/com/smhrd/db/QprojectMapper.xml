@@ -8,6 +8,10 @@
     INSERT INTO q_project (email, s_day, p_day, today_s, p_start, p_end, p_count)
     VALUES (#{email}, 0, 1, 0, #{p_start}, to_date(#{p_start}, 'YYYY-MM-DD') + (interval '40' day), 1)
   </insert>
+  
+  <insert id="ciga" parameterType="com.smhrd.model.QprojectDTO">
+  	insert into ciga values (#{email}, #{p_start}, 0)
+  </insert>
 
   <!-- 로그인한 사용자의 값 불러오기...?-->
   <select id="come" parameterType="com.smhrd.model.QprojectDTO"

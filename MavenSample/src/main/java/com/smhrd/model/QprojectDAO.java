@@ -19,6 +19,17 @@ public class QprojectDAO {
 	            sqlSession.close();
 	        }
 	    }
+	
+	public int ciga(QprojectDTO dto) {
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		try {
+			int result = sqlSession.insert("ciga", dto);
+			sqlSession.commit();
+			return result;
+		} finally {
+			sqlSession.close();
+		}
+	}
 
 	//특정 사용자 값을 불러오는 메소드
 	public QprojectDTO come(QprojectDTO dto) {
