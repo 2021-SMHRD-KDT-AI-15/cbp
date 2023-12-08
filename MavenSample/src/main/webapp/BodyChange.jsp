@@ -19,6 +19,12 @@
         .progress-container {
             margin-bottom: 20px;
         }
+        
+        #img{
+        width:350px;
+        heigth: 250px;
+        align-content: center;
+        }
 
         progress {
             width: 100%;
@@ -44,6 +50,9 @@
 			border-radius: 10px;
 			background-color: #f0f0f0;
 			
+		}
+		.divv{
+		margin-left: 400px;
 		}
     </style>
 </head>
@@ -150,17 +159,20 @@
 							<article class="box page-content">
 
 								<header>
-									<h2>나의 신체변화</h2>
-									<p>금연 20분 후부터 15년 뒤까지 일어나는 변화</p>
+									<h2 align="center";>나의 신체변화</h2>
+									<p align="center";>금연 20분 후부터 15년 뒤까지 일어나는 변화</p>
 
 								</header>
 
-								<section>
-									<span class="image featured"><img
+
+
+    <div style="float: left">
+        <span id="img" class="image featured"><img 
 											src="https://cdn.kormedi.com/wp-content/uploads/2020/10/gettyimages-a10648891-459x580.jpg"
 											alt="" /></span>
-									<p>
-										연간 전 세계 700만 명이 흡연으로 사망하고 있다. 흡연은 신체 거의 모든 기관에 나쁜 영향을 미친다.
+    </div>
+    <div class=" divv">
+           연간 전 세계 700만 명이 흡연으로 사망하고 있다. 흡연은 신체 거의 모든 기관에 나쁜 영향을 미친다.
 										하지만 니코틴의 중독성으로 금연을 실천하기란 쉽지 않다. 영구적인 금연을 실천하면 가장 좋겠지만, 반복적으로 실패하더라도 스스로를 탓하거나
 										포기하지 말고 반복적으로 계속 시도하는 것이 좋다. 금연은 실천한 이후 단시간 내에 긍정적인 변화가 나타나기 때문에 반복적으로 짧게라도 시도하는
 										것이 바람직하다.
@@ -168,8 +180,22 @@
 										미국 건강 심리학자인 레이첼 B. 헤이스 박사는 미국 언론매체 인사이더를 통해 “그동안 얼마나 오랫동안 흡연해왔는지는 중요하지 않다”며 “한 번
 										담배를 끊고 나면 여러 건강상 이점들이 나타나기 시작한다”고 말했다. 이미 지나간 시간들을 후회하는 것은 의미가 없고, 지금이라도 지속적인
 										시도를 해보라는 것.
-									</p>
-								</section>
+    </div>
+
+				
+<!-- Features -->
+<hr>
+						<section class="box features">
+							<h2 class="major"><span>금연을 시작하는 당신의 선택</span></h2>
+							
+							<div class="col-12">
+								<ul class="actions">
+									
+									<li><a id="start" class="button large" onclick="startGauges()">금연시작</a></li>
+									<li><a id="reset" class="button alt large" onclick="resetGauges()">초기화</a></li>
+								</ul>
+							</div>
+						</section>
 
 								<section class="border-line">
 									<% if(info != null) { %>
@@ -348,18 +374,7 @@
 					</div>
 					<div class="col-12">
 
-						<!-- Features -->
-						<section class="box features">
-							<h2 class="major"><span>금연을 시작하는 당신의 선택</span></h2>
-							
-							<div class="col-12">
-								<ul class="actions">
-									
-									<li><a id="start" class="button large" onclick="startGauges()">금연시작</a></li>
-									<li><a id="reset" class="button alt large" onclick="resetGauges()">초기화</a></li>
-								</ul>
-							</div>
-						</section>
+						
 
 					</div>
 				</div>
