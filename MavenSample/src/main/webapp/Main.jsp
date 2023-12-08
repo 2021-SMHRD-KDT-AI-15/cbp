@@ -25,6 +25,19 @@
       right: 10px;
       bottom: 20px;
    }
+   
+ul.special{
+margin : -3em -3em;
+} 
+#main{
+padding: 3em 0 3em 0;
+}
+#banner{
+padding : 0;
+   }
+#banner.content {
+    padding: 2em 0 2em 0;
+}
 </style>
 </head>
 
