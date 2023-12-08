@@ -21,6 +21,11 @@
 	float: left;
 	margin-right: 195px;
 }
+
+#ttable {
+	font-size: 23px;
+}
+
 </style>
 
 </head>
@@ -109,8 +114,7 @@
 						if (info != null) {
 						%> <a href="LogoutService">로그아웃</a> <%
  } else {
- %>
-						<a href="./Login.jsp">로그인</a> <%
+ %> <a href="./Login.jsp">로그인</a> <%
  }
  %>
 					</li>
@@ -172,10 +176,15 @@
 							<article class="box page-content">
 
 								<header>
-									<h2>마이페이지</h2>
-									<p>
-										<strong>${info.nick}</strong>님 환영합니다 <b>${info1.p_day}</b>일째입니다!
-										목표까지 <b>${40-info1.p_day}</b>일 남았습니다. <br>파이팅!
+									<h2 align="center">마이페이지</h2>
+									<p align="center">
+										<strong>${info.nick}</strong>님 환영합니다.  <b>오늘</b>로<b> ${info1.p_day}</b>일째입니다!
+										<br>
+										<b>목표</b>까지 <b>${40-info1.p_day}</b>일 남았습니다.     <strong>파이팅!</strong>
+										<br>
+										<br>
+										<br>
+										<hr>
 									</p>
 									<h3>
 										<!--그동안 핀 담배 nn개
@@ -188,31 +197,52 @@
 										<input type="hidden" name="step" id="step" value="0" /> <input
 											type="hidden" name="stopDay" id="stopDay" value="" />
 									</form>
-									<div class="clock_infor">
-										<div class="clock1">
+									<table border="10" id="ttable">
 										
-											<p>
-												<span>금연시작일 : <b id="demo">todayDateOnly</b></span>
-											</p>
-										</div>
-										<div class="clock2">
-											<p>
-												<b id="pday"></b>일 <b id="phour"></b>시간의 수명이 <span>연장되었습니다.</span>
-											</p>
-										</div>
-										<div class="clock3">
-											<p>
-												금연저금통에 <b id="money"></b>원이 <span>저금되었습니다.</span>
-											</p>
-										</div>
-										<div class="clock4">
-											<p>
-											 	<b id="ciga"></b>대의 담배를<span> 피우지 않았습니다.</span>
-											</p>
-										</div>
-									</div>
+										<tr align="center">
+											<td>
+												<div class="clock_infor">
+													<div class="clock1">
+														<p>
+															<span>금연시작일 : <b id="demo">todayDateOnly</b></span>
+														</p>
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="clock_infor">
+													<div class="clock2">
+														<p>
+															<b id="pday"></b>일 <b id="phour"></b>시간의 수명이 <span>연장되었습니다.</span>
+														</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr align="center">
+											<td>
+												<div class="clock_infor">
+													<div class="clock3">
+														<p>
+															저금통에 <b id="money"></b>원이 <span>저금되었습니다.</span>
+															<hr>
+														</p>
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="clock_infor">
+													<div class="clock4">
+														<p>
+															<b id="ciga"></b>대의 담배를<span> 피우지 않았습니다.</span>
+															<hr>
+														</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+									</table>
 								</header>
-
 								<div class="div">
 									<section>
 										<h3>등산</h3>
@@ -224,71 +254,70 @@
 							</article>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</section>
 
-		<!-- Footer -->
-		<footer id="footer">
-			<div class="container">
-				<div class="row gtr-200">
-					<div class="col-12">
+      <!-- Footer -->
+      <footer id="footer">
+         <div class="container">
+            <div class="row gtr-200">
+               <div class="col-12">
 
-						<!-- About -->
-						<section>
-							<h3 class="major">
-								<span>About Us</span>
-							</h3>
-							<p>
-								인공지능 융합서비스 개발자과정(NCS) 15회차 TEAM 돌아와조<br> 광주광역시 남구 송암로 60
-								스마트인재개발원
-							</p>
-						</section>
+                  <!-- About -->
+                  <section>
+                     <h3 class="major">
+                        <span>About Us</span>
+                     </h3>
+                     <p>
+                        인공지능 융합서비스 개발자과정(NCS) 15회차 TEAM 돌아와조<br> 광주광역시 남구 송암로 60
+                        스마트인재개발원
+                     </p>
+                  </section>
 
-					</div>
+               </div>
 
-				</div>
+            </div>
 
-				<!-- Copyright -->
-				<div id="copyright">
-					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved</li>
-						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</div>
+            <!-- Copyright -->
+            <div id="copyright">
+               <ul class="menu">
+                  <li>&copy; Untitled. All rights reserved</li>
+                  <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+               </ul>
+            </div>
 
-			</div>
-		</footer>
+         </div>
+      </footer>
 
-	</div>
-	<script>
-	
-		var today = new Date('${info1.p_start}');
-		var todayDateOnly = today.toISOString().substring(0, 10);
-		document.getElementById("demo").innerHTML = todayDateOnly;
-		
-		var totalHours = ('${info.s_daily}' * '${info1.p_day}' * 11) / 60;
-		var pday = Math.floor(totalHours / 24);
-		var phour = Math.floor(totalHours % 24);
-		document.getElementById("pday").innerHTML = pday;
-		document.getElementById("phour").innerHTML = phour;
-		
-		var money = '${info1.p_day}'*'${info.s_daily}'*'${info.price}'/20;
-		document.getElementById("money").innerHTML = money;
-		
-		var ciga = '${info1.p_day}'*'${info.s_daily}'; // 당일 흡연량들의 총합 빼야함
-		document.getElementById("ciga").innerHTML = ciga;
-		
-	</script>
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.dropotron.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+   </div>
+   <script>
+   
+      var today = new Date('${info1.p_start}');
+      var todayDateOnly = today.toISOString().substring(0, 10);
+      document.getElementById("demo").innerHTML = todayDateOnly;
+      
+      var totalHours = ('${info.s_daily}' * '${info1.p_day}' * 11) / 60;
+      var pday = Math.floor(totalHours / 24);
+      var phour = Math.floor(totalHours % 24);
+      document.getElementById("pday").innerHTML = pday;
+      document.getElementById("phour").innerHTML = phour;
+      
+      var money = '${info1.p_day}'*'${info.s_daily}'*'${info.price}'/20;
+      document.getElementById("money").innerHTML = money;
+      
+      var ciga = '${info1.p_day}'*'${info.s_daily}'; // 당일 흡연량들의 총합 빼야함
+      document.getElementById("ciga").innerHTML = ciga;
+      
+   </script>
+   <!-- Scripts -->
+   <script src="assets/js/jquery.min.js"></script>
+   <script src="assets/js/jquery.dropotron.min.js"></script>
+   <script src="assets/js/jquery.scrolly.min.js"></script>
+   <script src="assets/js/browser.min.js"></script>
+   <script src="assets/js/breakpoints.min.js"></script>
+   <script src="assets/js/util.js"></script>
+   <script src="assets/js/main.js"></script>
 
 </body>
 
