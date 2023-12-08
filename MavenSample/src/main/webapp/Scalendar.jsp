@@ -329,6 +329,7 @@ html, body {
 														title: '금연프로젝트',
 														start: todayDateOnly, // 날짜만 사용
 														end: tomoDateOnly // 날짜만 사용
+														color:"#AAEBAA" // 캘린더 색깔 코드
 													}
 
 												]
