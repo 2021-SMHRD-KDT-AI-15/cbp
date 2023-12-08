@@ -21,7 +21,7 @@
 	<!-- 로그인한 사용자의 흡연량 체크 -->
 	<update id="smoking" parameterType="com.smhrd.model.MemberDTO">
 		UPDATE CIGA SET
-		today_s=today_s+1 WHERE email= #{email}
+		today_s=today_s+1 WHERE email= #{email} AND THAT_DAY = TRUNC(SYSDATE)
 	</update>
 
 </mapper>
