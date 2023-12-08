@@ -126,7 +126,7 @@
 							<!-- Recent Posts -->
 							<% if(info != null) { %>
            <section>
-								<h2 class="major"><span>메뉴</span></h2>
+								<h2 class="major"><span>목록</span></h2>
 								<ul class="divided">
 								
 									<li>
