@@ -16,7 +16,7 @@
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet" href="assets/css/main.css" />
 
-<!-- ------------------------시작 ------------------->
+<!-- ------------------------시작 -------------------> 
 
 
 
@@ -329,7 +329,6 @@ html, body {
 														title: '금연프로젝트',
 														start: todayDateOnly, // 날짜만 사용
 														end: tomoDateOnly // 날짜만 사용
-														color:"#AAEBAA" // 캘린더 색깔 코드
 													}
 
 												]
