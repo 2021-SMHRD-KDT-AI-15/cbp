@@ -75,6 +75,8 @@ html, body {
 	margin-top: 0;
 	margin-bottom: 0;
 }
+
+
 </style>
 
 
@@ -304,6 +306,9 @@ html, body {
 													center: 'title',
 													right: 'dayGridMonth,timeGridWeek,timeGridDay'
 												},
+											
+												
+												
 												initialView: 'dayGridMonth',
 												navLinks: true,
 												editable: true,
@@ -322,14 +327,15 @@ html, body {
 													}
 													calendar.unselect()
 												},
-												// 이벤트 
+												// 이벤트 여기긷다ㅓ다다ㅏ닫
+												
 												events: [
 
 													{
 														title: '금연프로젝트',
-														start: todayDateOnly, // 날짜만 사용
-														end: tomoDateOnly // 날짜만 사용
-														color:"#AAEBAA" // 캘린더 색깔 코드
+													    start: todayDateOnly,
+													    end: tomoDateOnly,
+													    color:"#AAEBAA" // 캘린더 색깔 코드
 													}
 
 												]
