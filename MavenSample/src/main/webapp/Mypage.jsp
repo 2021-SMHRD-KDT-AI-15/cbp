@@ -25,7 +25,6 @@
 #ttable {
 	font-size: 23px;
 }
-
 </style>
 
 </head>
@@ -178,13 +177,10 @@
 								<header>
 									<h2 align="center">마이페이지</h2>
 									<p align="center">
-										<strong>${info.nick}</strong>님 환영합니다.  <b>오늘</b>로<b> ${info1.p_day}</b>일째입니다!
-										<br>
-										<b>목표</b>까지 <b>${40-info1.p_day}</b>일 남았습니다.     <strong>파이팅!</strong>
-										<br>
-										<br>
-										<br>
-										<hr>
+										<strong>${info.nick}</strong>님 환영합니다. <b>오늘</b>로<b>
+											${info1.p_day}</b>일째입니다! <br> <b>목표</b>까지 <b>${40-info1.p_day}</b>일
+										남았습니다. <strong>파이팅!</strong> <br> <br> <br>
+									<hr>
 									</p>
 									<h3>
 										<!--그동안 핀 담배 nn개
@@ -198,7 +194,7 @@
 											type="hidden" name="stopDay" id="stopDay" value="" />
 									</form>
 									<table border="10" id="ttable">
-										
+
 										<tr align="center">
 											<td>
 												<div class="clock_infor">
@@ -225,7 +221,7 @@
 													<div class="clock3">
 														<p>
 															저금통에 <b id="money"></b>원이 <span>저금되었습니다.</span>
-															<hr>
+														<hr>
 														</p>
 													</div>
 												</div>
@@ -235,7 +231,7 @@
 													<div class="clock4">
 														<p>
 															<b id="ciga"></b>대의 담배를<span> 피우지 않았습니다.</span>
-															<hr>
+														<hr>
 														</p>
 													</div>
 												</div>
@@ -245,10 +241,80 @@
 								</header>
 								<div class="div">
 									<section>
-										<h3>등산</h3>
-										<span class="#"><img
-											src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcvXfz6bnv0MBCR51nhZ0w3qOn9mZj6WpKMg&usqp=CAU"
-											alt=""></span>
+										<div id="background"
+											style="position: relative; height: 592px; width: 887px; background-image: url('assets/css/images/mountain.jpg'); background-size: cover;">
+											<img id="hiker" src="assets/css/images/male.png"
+												style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); height: 40px; width: 40px;">
+										</div>
+										<br>
+										<h3 align="center">40일 동안 천천히 산을 올라가 정상까지 가봅시다! 시작 버튼을
+											눌러주세요!</h3>
+										<p align="center">
+											<button id="start">시작</button>
+											<button id="stop">멈춤</button>
+											<button id="reset">리셋</button>
+										</p>
+										<script>
+											var hiker = document
+													.getElementById('hiker');
+											var background = document
+													.getElementById('background');
+											var startButton = document
+													.getElementById('start');
+											var stopButton = document
+													.getElementById('stop');
+											var resetButton = document
+													.getElementById('reset');
+											var days = 40;
+											var distanceToTravel = background.offsetHeight * 0.8; // 배경 이미지의 높이의 70%
+											var distancePerDay = distanceToTravel
+													/ days;
+											var animateHiker;
+
+											var moveHiker = function() {
+												var currentTop = parseInt(hiker.style.bottom) || 0;
+												if (currentTop < distanceToTravel) { // 캐릭터가 아직 최대 높이에 도달하지 않았다면
+													hiker.style.bottom = (currentTop + distancePerDay)
+															+ "px";
+												} else { // 캐릭터가 최대 높이에 도달했다면
+													clearInterval(animateHiker); // 캐릭터의 움직임을 멈춥니다.
+												}
+											}
+
+											startButton
+													.addEventListener(
+															'click',
+															function() {
+																if (!animateHiker) {
+																	animateHiker = setInterval(
+																			moveHiker,
+																			24 * 60 * 60 * 1000); // 1000 = 10초, 24*60*60*1000 = 하루
+																}
+															});
+
+											stopButton
+													.addEventListener(
+															'click',
+															function() {
+																if (animateHiker) {
+																	alert("잠시 멈추시겠습니까? 언제든지 시작을 누르시면 다시 움직입니다!");
+																	clearInterval(animateHiker);
+																	animateHiker = null;
+																}
+															});
+
+											resetButton
+													.addEventListener(
+															'click',
+															function() {
+																hiker.style.bottom = '0px';
+																if (animateHiker) {
+																	alert("리셋하시겠어요? 처음부터 다시 시작됩니다!");
+																	clearInterval(animateHiker);
+																	animateHiker = null;
+																}
+															});
+										</script>
 									</section>
 								</div>
 							</article>
@@ -258,66 +324,64 @@
 			</div>
 		</section>
 
-      <!-- Footer -->
-      <footer id="footer">
-         <div class="container">
-            <div class="row gtr-200">
-               <div class="col-12">
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="container">
+				<div class="row gtr-200">
+					<div class="col-12">
 
-                  <!-- About -->
-                  <section>
-                     <h3 class="major">
-                        <span>About Us</span>
-                     </h3>
-                     <p>
-                        인공지능 융합서비스 개발자과정(NCS) 15회차 TEAM 돌아와조<br> 광주광역시 남구 송암로 60
-                        스마트인재개발원
-                     </p>
-                  </section>
+						<!-- About -->
+						<section>
+							<h3 class="major">
+								<span>About Us</span>
+							</h3>
+							<p>
+								인공지능 융합서비스 개발자과정(NCS) 15회차 TEAM 돌아와조<br> 광주광역시 남구 송암로 60
+								스마트인재개발원
+							</p>
+						</section>
 
-               </div>
+					</div>
 
-            </div>
+				</div>
 
-            <!-- Copyright -->
-            <div id="copyright">
-               <ul class="menu">
-                  <li>&copy; Untitled. All rights reserved</li>
-                  <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-               </ul>
-            </div>
+				<!-- Copyright -->
+				<div id="copyright">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved</li>
+						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
 
-         </div>
-      </footer>
+			</div>
+		</footer>
 
-   </div>
-   <script>
-   
-      var today = new Date('${info1.p_start}');
-      var todayDateOnly = today.toISOString().substring(0, 10);
-      document.getElementById("demo").innerHTML = todayDateOnly;
-      
-      var totalHours = ('${info.s_daily}' * '${info1.p_day}' * 11) / 60;
-      var pday = Math.floor(totalHours / 24);
-      var phour = Math.floor(totalHours % 24);
-      document.getElementById("pday").innerHTML = pday;
-      document.getElementById("phour").innerHTML = phour;
-      
-      var money = '${info1.p_day}'*'${info.s_daily}'*'${info.price}'/20;
-      document.getElementById("money").innerHTML = money;
-      
-      var ciga = '${info1.p_day}'*'${info.s_daily}'; // 당일 흡연량들의 총합 빼야함
-      document.getElementById("ciga").innerHTML = ciga;
-      
-   </script>
-   <!-- Scripts -->
-   <script src="assets/js/jquery.min.js"></script>
-   <script src="assets/js/jquery.dropotron.min.js"></script>
-   <script src="assets/js/jquery.scrolly.min.js"></script>
-   <script src="assets/js/browser.min.js"></script>
-   <script src="assets/js/breakpoints.min.js"></script>
-   <script src="assets/js/util.js"></script>
-   <script src="assets/js/main.js"></script>
+	</div>
+	<script>
+		var today = new Date('${info1.p_start}');
+		var todayDateOnly = today.toISOString().substring(0, 10);
+		document.getElementById("demo").innerHTML = todayDateOnly;
+
+		var totalHours = ('${info.s_daily}' * '${info1.p_day}' * 11) / 60;
+		var pday = Math.floor(totalHours / 24);
+		var phour = Math.floor(totalHours % 24);
+		document.getElementById("pday").innerHTML = pday;
+		document.getElementById("phour").innerHTML = phour;
+
+		var money = '${info1.p_day}' * '${info.s_daily}' * '${info.price}' / 20;
+		document.getElementById("money").innerHTML = money;
+
+		var ciga = '${info1.p_day}' * '${info.s_daily}'; // 당일 흡연량들의 총합 빼야함
+		document.getElementById("ciga").innerHTML = ciga;
+	</script>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
 
 </body>
 
