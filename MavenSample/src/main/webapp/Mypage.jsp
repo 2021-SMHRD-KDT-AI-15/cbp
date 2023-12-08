@@ -268,10 +268,10 @@
 		var todayDateOnly = today.toISOString().substring(0, 10);
 		document.getElementById("demo").innerHTML = todayDateOnly;
 		
-		var pday = Math.floor('${info1.p_day}'*'${info.s_daily}'*0.000229*36.5);
+		var totalHours = ('${info.s_daily}' * '${info1.p_day}' * 11) / 60;
+		var pday = Math.floor(totalHours / 24);
+		var phour = Math.floor(totalHours % 24);
 		document.getElementById("pday").innerHTML = pday;
-		
-		var phour = Math.floor('${info1.p_day}'*'${info.s_daily}'*0.000229%36.5*24);
 		document.getElementById("phour").innerHTML = phour;
 		
 		var money = '${info1.p_day}'*'${info.s_daily}'*'${info.price}'/20;
