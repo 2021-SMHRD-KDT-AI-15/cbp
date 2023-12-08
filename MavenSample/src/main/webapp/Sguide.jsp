@@ -42,10 +42,14 @@ th, td {
 	border: 1px solid black;
 	padding: 15px;
 	text-align: left;
+/* 	font-weight : bold;
+	font-size: 20px; */
 }
 
 th {
 	background-color: #f2f2f2;
+	font-weight : bold;
+	font-size: 30px;
 }
 
 .center {
@@ -186,7 +190,7 @@ th {
 							<article class="box page-content">
 
 								<header>
-									<h2>금연가이드</h2>
+									<h2 align="center">금연가이드</h2>
 
 								</header>
 								<table>

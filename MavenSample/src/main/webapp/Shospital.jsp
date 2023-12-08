@@ -25,6 +25,7 @@
 	font-size: 12px;
 }
 
+
 .map_wrap a, .map_wrap a:hover, .map_wrap a:active {
 	color: #000;
 	text-decoration: none;
@@ -53,6 +54,10 @@
 
 .bg_white {
 	background: #fff;
+}
+
+#mappp{
+	margin-right: 100px;
 }
 
 #menu_wrap hr {
@@ -284,10 +289,10 @@
 		<section id="main">
 			<div class="container">
 				<div class="row"></div>
-				<div class="col-3 col-12-medium">
+				<div class="col-3 col-12-medium" id="mappp">
 					<div class="map_wrap">
 						<div id="map"
-							style="width: 100%; height: 100%; position: relative; overflow: hidden;"></div>
+							style="width: 123%; height: 105%; position: relative; overflow: hidden;"></div>
 
 						<div id="menu_wrap" class="bg_white">
 							<div class="option">
@@ -305,9 +310,10 @@
 						</div>
 						</div>
 						</div>
+						
 					</div>
 				</section>
-					<script type="text/javascript"
+					<script id="mappp" type="text/javascript" 
 						src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d2ab5f71df793020007bf7797ba4ef9a&libraries=services"></script>
 					<script>
 						// 마커를 담을 배열입니다

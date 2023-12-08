@@ -136,10 +136,10 @@ th {
 						<div class="content">
 							<article class="box page-content">
 								<header>
-									<h2>가이드와의 대화</h2>
-									<h3>챗봇 기능을 쓸 수 있습니다! 이미지를 클릭해주세요 :)</h3>
+									<h2 align="center">가이드와의 대화</h2>
+									<h3 align="center">챗봇 기능을 쓸 수 있습니다! 이미지를 클릭해주세요 :) </h3>
 								</header>
-								<a href="https://getgpt.app/play/eMhIQtjQbn"><img
+								<a align="center" href="https://getgpt.app/play/eMhIQtjQbn"><img
 									src="assets/css/images/Chatbot.png"></a>
 							</article>
 						</div>

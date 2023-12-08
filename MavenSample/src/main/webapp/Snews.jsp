@@ -27,6 +27,8 @@ th, td {
 
 th {
 	background-color: #f2f2f2;
+	font-weight : bold;
+	font-size: 30px;
 }
 
 .center {
@@ -168,7 +170,7 @@ th {
 							<article class="box page-content">
 
 								<header>
-									<h2>금연 뉴스</h2>
+									<h2 align="center">금연 뉴스</h2>
 								</header>
 								<table>
 									<tr>
