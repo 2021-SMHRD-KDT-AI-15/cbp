@@ -46,8 +46,9 @@ html, body {
 
  /* 아이콘 스타일 */
     #wise button {
-    	background-color:red;
-        font-size: 2em; /* 원하는 크기로 조절하세요 */
+    	align-content:center;
+    	background-color:#FF4646;
+        font-size: 25px; /* 원하는 크기로 조절하세요 */
         text-decoration: none; /* 링크에 있는 밑줄 제거 */
     }
 
@@ -230,7 +231,7 @@ html, body {
 <div id="wise">
 <!-- 추가: 담배 모양 아이콘 -->
 <% if(info != null) { %>
-            <a href="smoking_button"><button> 🚬 </button></a>
+            <a href="smoking_button"><button> 🚬 <br> 흡연 체크 </button></a>
          <% } else { %>
             <button><a href="#"> 🚬 </a></button>
          <% } %>
