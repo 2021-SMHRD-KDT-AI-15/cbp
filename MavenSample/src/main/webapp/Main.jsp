@@ -123,10 +123,10 @@
                            저희 서비스와 함께 더 건강해진 자신을 체험해보세요!
                         </p>
                      </ul>
-                     <header>
+                      </section>
                </div>
-         </div>
-  
+         </section>
+	
   <div id="quote"></div>
    <script>
        const quotes = [
@@ -148,23 +148,7 @@
        const quote = quotes[Math.floor(Math.random() * quotes.length)];
 
        document.getElementById("quote").innerHTML = quote;
-   
-
-    // 담배 아이콘 클릭 이벤트 핸들러
-    $("#cigarette-icon").click(function() {
-        // 서버로 클릭 이벤트 전송
-        $.ajax({
-            url: 'CigaretteCounter', // 서버에서 처리할 URL을 지정
-            type: 'POST', // 클릭 이벤트를 서버로 전송할 때는 POST 메서드 사용
-            success: function(response) {
-                console.log("Cigarette count increased");
-            },
-            error: function(error) {
-                console.error("Error increasing cigarette count", error);
-            }
-        });
-    });
-});
+  
 </script>
    <!-- Footer -->
    <footer id="footer">
