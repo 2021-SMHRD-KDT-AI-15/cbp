@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8" isELIgnored="false"%>
-   <%@ page import="com.smhrd.model.MemberDTO" %>
+	pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="com.smhrd.model.MemberDTO"%>
 <!DOCTYPE HTML>
 <!--
    TXT by HTML5 UP
@@ -253,12 +254,10 @@ html, body {
 
                         <header>
                            <h2>금연 일정관리</h2>
-                           <c:if ${!empty info}>
                               <!-- info가 null값이 아니라면 -->
                               <p>
                                  <strong>${info.nick}</strong>님 환영합니다.
                               </p>
-                           </c:if>
                         </header>
                         <!-- calendar 태그 -->
                         <div id='calendar-container'>
@@ -336,7 +335,15 @@ html, body {
                                            start: todayDateOnly,
                                            end: tomoDateOnly,
                                            color:"#AAEBAA" // 캘린더 색깔 코드
-                                       }
+                                       },
+										
+										<c:forEach var="log" items="${list}" varStatus="status">
+									      {
+									        title: '${log.today_s}',
+									        start: '${log.that_day}',
+									        color:"#FF4646"
+									      }<c:if test="${not status.last}">,</c:if>
+									    </c:forEach>
 
                                     ]
                                  });

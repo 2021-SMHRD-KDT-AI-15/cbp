@@ -1,6 +1,7 @@
 package com.smhrd.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,6 +14,8 @@ import com.smhrd.model.MemberDAO;
 import com.smhrd.model.MemberDTO;
 import com.smhrd.model.QprojectDAO;
 import com.smhrd.model.QprojectDTO;
+import com.smhrd.model.cigaDAO;
+import com.smhrd.model.cigaDTO;
 
 @WebServlet("/LoginService")
 public class LoginService extends HttpServlet {
@@ -34,7 +37,10 @@ public class LoginService extends HttpServlet {
 
 		MemberDAO dao = new MemberDAO();
 		QprojectDAO dao1 = new QprojectDAO();
+		cigaDAO dao2 = new cigaDAO();
 
+		ArrayList<cigaDTO> q_list = new ArrayList<>();
+		q_list = dao2.log(email);
 		// 4. login() 호출 (<- 꺼내온 데이터 email, pw를 한 묶음으로 묶어서 전달 -> MemberDTO 활용)
 		
 		MemberDTO dto = new MemberDTO();
@@ -54,6 +60,7 @@ public class LoginService extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("info", result);
 			session.setAttribute("info1", result1);
+			session.setAttribute("list", q_list);
 			response.sendRedirect("LoginSuccess.jsp");
 
 		} else {
