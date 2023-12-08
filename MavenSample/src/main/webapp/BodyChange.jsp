@@ -124,9 +124,11 @@
 							<!-- Sidebar -->
 
 							<!-- Recent Posts -->
-							<section>
+							<% if(info != null) { %>
+           <section>
 								<h2 class="major"><span>메뉴</span></h2>
 								<ul class="divided">
+								
 									<li>
 										<article class="box post-summary">
 											<h3><a href="./Mypage.jsp">마이페이지</a></h3>
@@ -148,6 +150,36 @@
 								</ul>
 
 							</section>
+            
+            
+         <% } else { %>
+           <section>
+								<h2 class="major"><span>메뉴</span></h2>
+								<ul class="divided">
+								
+									<li>
+										<article class="box post-summary">
+											<h3><a href="./Login.jsp">마이페이지</a></h3>
+
+										</article>
+									</li>
+									<li>
+										<article class="box post-summary">
+											<h3><a href="./Login.jsp">금연일정관리</a></h3>
+
+										</article>
+									</li>
+									<li>
+										<article class="box post-summary">
+											<h3><a href="./BodyChange.jsp">나의신체변화</a></h3>
+
+										</article>
+									</li>
+								</ul>
+
+							</section>
+         <% } %>
+							
 
 						</div>
 					</div>

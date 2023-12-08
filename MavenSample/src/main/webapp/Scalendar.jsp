@@ -373,7 +373,12 @@ html, body {
                      </p>
                   </section>
 
+<<<<<<< HEAD
+					</div>
+					<!-- 왜이러지요~  -->
+=======
                </div>
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-15/cbp.git
 
             </div>
 
