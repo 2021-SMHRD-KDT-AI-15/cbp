@@ -53,8 +53,8 @@ padding : 0;
 }
 
 #quote {
-align:center;
-	background:#b1ddab;
+	color: #000000;
+	align:center;
     position: absolute;
     top: 55%; /* 상위 요소 (여기서는 #main)의 중앙에 위치하게 합니다. */
     left: 50%; /* 상위 요소 (여기서는 #main)의 중앙에 위치하게 합니다. */
