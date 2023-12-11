@@ -308,18 +308,6 @@ html, body {
 								</div>
 
 								<script>
-
-                           var today = new Date('${info.q_date}');
-                           var time = today.getTime();
-                           var diff = (24 * 60 * 60 * 1000) * 40;
-                           var tomo = new Date(time + diff);
-                           // 날짜만 추출하기
-                           var todayDateOnly = today.toISOString().substring(0, 10);
-                           var tomoDateOnly = tomo.toISOString().substring(0, 10);
-                           
-                        </script>
-
-								<script>
                            (function () {
                               $(function () {
                                  // calendar element 취득
@@ -355,8 +343,8 @@ html, body {
 
                                        {
                                           title: '금연프로젝트',
-                                           start: todayDateOnly,
-                                           end: tomoDateOnly,
+                                           start: '${info.q_date}',
+                                           end: '${info1.p_end}',
                                            color:"#AAEBAA" // 캘린더 색깔 코드
                                        },
 										
