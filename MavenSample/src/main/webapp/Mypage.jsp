@@ -216,7 +216,7 @@
 												<div class="clock_infor">
 													<div class="clock1">
 														<p>
-															<span>금연시작일 : <b id="demo">todayDateOnly</b></span>
+															<span>금연시작일 : <b id="demo"></b></span>
 														</p>
 													</div>
 												</div>
@@ -376,9 +376,7 @@
 
 	</div>
 	<script>
-		var today = new Date('${info1.p_start}');
-		var todayDateOnly = today.toISOString().substring(0, 10);
-		document.getElementById("demo").innerHTML = todayDateOnly;
+		document.getElementById("demo").innerHTML = '${info1.p_start}'.substring(0, 10);
 
 		var totalHours = ('${info.s_daily}' * '${info1.p_day}' * 11) / 60;
 		var pday = Math.floor(totalHours / 24);
