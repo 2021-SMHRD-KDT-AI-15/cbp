@@ -101,7 +101,14 @@ th {
 						<li><a href="./Snews.jsp">금연 뉴스</a></li>
 						<li><a href="./Schatbot.jsp">가이드와의 대화</a></li>
 					</ul></li>
-				<li><a href="./Shospital.jsp">금연 도움 기관</a></li>
+				<li><a href="./Shospital.jsp">금연 도움 기관</a>
+				<ul>
+					<li><a href="./Shospital.jsp">금연 관련기관</a></li></li>
+
+			</ul>
+				
+				
+				
 				<li><a href="./Mypage.jsp">나의 건강정보</a>
 					<ul>
 						<li><a href="./Login.jsp">마이페이지</a></li>
