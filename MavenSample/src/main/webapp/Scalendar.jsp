@@ -76,7 +76,23 @@ html, body {
    margin-top: 0;
    margin-bottom: 0;
 }
+#myBtn {
+display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #090808;
+    background-color: #aaeba9;
 
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+   
+  position: fixed; /* 버튼을 스크롤과 독립적으로 위치시킵니다. */
+  bottom: 60px; /* 버튼을 페이지 하단에서 20px 떨어진 위치에 둡니다. */
+  right: 30px; /* 버튼을 페이지 오른쪽에서 30px 떨어진 위치에 둡니다. */
+  z-index: 99; /* z-index를 높여 다른 요소 위에 버튼이 나타나도록 합니다. */
+  font-size: 18px; /* 버튼의 텍스트 크기를 지정합니다. */
+ }
 
 </style>
 
@@ -396,6 +412,8 @@ html, body {
             </div>
 
          </div>
+         <button onclick="topFunction()" id="myBtn" title="Go to top">TOP</button>
+         
       </footer>
 
    </div>
@@ -408,7 +426,12 @@ html, body {
    <script src="assets/js/breakpoints.min.js"></script>
    <script src="assets/js/util.js"></script>
    <script src="assets/js/main.js"></script>
-
+<script>
+function topFunction() {
+	  document.body.scrollTop = 0; // Safari를 위한 코드
+	  document.documentElement.scrollTop = 0; // Chrome, Firefox, IE, Opera를 위한 코드
+	}
+</script>
 </body>
 
 </html>
