@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" isELIgnored="false"%>
+	<%@ page import="com.smhrd.model.MemberDTO" %>
 
 <!DOCTYPE HTML>
 <!--
@@ -51,6 +52,7 @@ th {
 </head>
 
 <body class="is-preload">
+<%MemberDTO info = (MemberDTO) session.getAttribute("info");%>
 	<div id="page-wrapper">
 
 		<!-- Header -->
@@ -67,7 +69,8 @@ th {
 
 
 		<!-- Nav -->
-		<nav id="nav">
+		  <% if(info != null) { %>
+            <nav id="nav">
 			<ul>
 				<li class="current"><a href="./Main.jsp">홈</a></li>
 				<li><a href="./Sguide.jsp">금연 정보</a>
@@ -88,6 +91,30 @@ th {
 
 			</ul>
 		</nav>
+         <% } else { %>
+            <nav id="nav">
+			<ul>
+				<li class="current"><a href="./Main.jsp">홈</a></li>
+				<li><a href="./Sguide.jsp">금연 정보</a>
+					<ul>
+						<li><a href="./Sguide.jsp">금연 가이드</a></li>
+						<li><a href="./Snews.jsp">금연 뉴스</a></li>
+						<li><a href="./Schatbot.jsp">가이드와의 대화</a></li>
+					</ul></li>
+				<li><a href="./Shospital.jsp">금연 도움 기관</a></li>
+				<li><a href="./Mypage.jsp">나의 건강정보</a>
+					<ul>
+						<li><a href="./Login.jsp">마이페이지</a></li>
+						<li><a href="./Login.jsp">금연일정관리</a></li>
+						<li><a href="./BodyChange.jsp">나의신체변화</a></li>
+					</ul></li>
+
+				<li><a href="./Login.jsp">로그인</a></li>
+
+			</ul>
+		</nav>
+         <% } %> 
+		
 
 		<!-- Main -->
 		<section id="main">
