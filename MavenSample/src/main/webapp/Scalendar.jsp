@@ -337,13 +337,18 @@ html, body {
                                            color:"#AAEBAA" // 캘린더 색깔 코드
                                        },
 										
-										<c:forEach var="log" items="${list}" varStatus="status">
-									      {
-									        title: '${log.today_s}',
-									        start: '${log.that_day}',
-									        color:"#FF4646"
-									      }<c:if test="${not status.last}">,</c:if>
-									    </c:forEach>
+                                       <c:forEach var="log" items="${list}" varStatus="status">
+                                       <c:choose>
+                                         <c:when test="${not status.first}">
+                                           ,
+                                         </c:when>
+                                       </c:choose>
+                                       {
+                                         start: '${log.that_day}',  
+                                         title: '${log.today_s}',
+                                         color: "#FF4646"
+                                       }
+                                     </c:forEach>
 
                                     ]
                                  });

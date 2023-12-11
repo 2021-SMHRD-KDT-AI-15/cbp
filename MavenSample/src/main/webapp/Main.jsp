@@ -20,7 +20,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <style>
    #quote{
-      border: 10px solid #b1ddab;
+      border: 5px solid #b1ddab;
       position: fixed;
       right: 10px;
       bottom: 20px;
