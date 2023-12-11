@@ -25,23 +25,22 @@
 #ttable {
 	font-size: 23px;
 }
-#myBtn {
-display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #090808;
-    background-color: #aaeba9;
 
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-   
-  position: fixed; /* 버튼을 스크롤과 독립적으로 위치시킵니다. */
-  bottom: 60px; /* 버튼을 페이지 하단에서 20px 떨어진 위치에 둡니다. */
-  right: 30px; /* 버튼을 페이지 오른쪽에서 30px 떨어진 위치에 둡니다. */
-  z-index: 99; /* z-index를 높여 다른 요소 위에 버튼이 나타나도록 합니다. */
-  font-size: 18px; /* 버튼의 텍스트 크기를 지정합니다. */
- }
+#myBtn {
+	display: inline-block;
+	padding: 10px 20px;
+	font-size: 16px;
+	color: #090808;
+	background-color: #aaeba9;
+	border: none;
+	border-radius: 5px;
+	text-decoration: none;
+	position: fixed; /* 버튼을 스크롤과 독립적으로 위치시킵니다. */
+	bottom: 60px; /* 버튼을 페이지 하단에서 20px 떨어진 위치에 둡니다. */
+	right: 30px; /* 버튼을 페이지 오른쪽에서 30px 떨어진 위치에 둡니다. */
+	z-index: 99; /* z-index를 높여 다른 요소 위에 버튼이 나타나도록 합니다. */
+	font-size: 18px; /* 버튼의 텍스트 크기를 지정합니다. */
+}
 </style>
 
 </head>
@@ -259,44 +258,44 @@ display: inline-block;
 								<div class="div">
 									<section>
 										<div id="background"
-											style="position: relative; height: 592px; width: 887px; background-image: url('assets/css/images/mountain.jpg'); background-size: cover;">
-											<img id="hiker" src="assets/css/images/male.png"
-												style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); height: 40px; width: 40px;">
+											style="position: relative; height: 592px; width: 887px; background-image: url('./assets/css/images/mountain.jpg'); background-size: cover;">
+											<img id="hiker" src="./assets/css/images/male.png"
+												style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); height: 40px; width: 40px;">
 										</div>
 										<br>
-										<h3 align="center">40일 동안 천천히 산을 올라가 정상까지 가봅시다! 시작 버튼을
-											눌러주세요!</h3>
 										<p align="center">
 											<button id="start">시작</button>
 											<button id="stop">멈춤</button>
 											<button id="reset">리셋</button>
 										</p>
-										<script>
-											var hiker = document
-													.getElementById('hiker');
-											var background = document
-													.getElementById('background');
-											var startButton = document
-													.getElementById('start');
-											var stopButton = document
-													.getElementById('stop');
-											var resetButton = document
-													.getElementById('reset');
-											var days = 40;
-											var distanceToTravel = background.offsetHeight * 0.8; // 배경 이미지의 높이의 70%
-											var distancePerDay = distanceToTravel
-													/ days;
-											var animateHiker;
 
-											var moveHiker = function() {
-												var currentTop = parseInt(hiker.style.bottom) || 0;
-												if (currentTop < distanceToTravel) { // 캐릭터가 아직 최대 높이에 도달하지 않았다면
-													hiker.style.bottom = (currentTop + distancePerDay)
-															+ "px";
-												} else { // 캐릭터가 최대 높이에 도달했다면
-													clearInterval(animateHiker); // 캐릭터의 움직임을 멈춥니다.
-												}
-											}
+										<script>
+										var hiker = document.getElementById('hiker');
+										var background = document.getElementById('background');
+										var startButton = document.getElementById('start');
+										var stopButton = document.getElementById('stop');
+										var resetButton = document.getElementById('reset');
+										var days = 40;
+										var distanceToTravel = background.offsetHeight * 0.812; // 배경 이미지의 높이의 80%
+										var distancePerDay = distanceToTravel / days;
+										var animateHiker;
+										var moveCount = 0; // 이동 횟수를 추적하는 변수
+
+										var moveHiker = function() {
+										    var currentTop = parseInt(hiker.style.bottom) || 0;
+										    var nextTop = currentTop + distancePerDay;
+										    if (moveCount < days) { // 캐릭터가 아직 40번 이동하지 않았다면
+										        if (nextTop < distanceToTravel) { // 캐릭터가 아직 최대 높이에 도달하지 않았다면
+										            hiker.style.bottom = nextTop + "px";
+										        } else { // 캐릭터가 최대 높이에 도달하거나 초과했다면
+										            hiker.style.bottom = distanceToTravel + "px"; // 캐릭터의 위치를 목표 높이로 설정합니다.
+										        }
+										        moveCount++; // 이동 횟수를 1 증가시킵니다.
+										    } else { // 캐릭터가 40번 이동했다면
+										        clearInterval(animateHiker); // 캐릭터의 움직임을 멈춥니다.
+										        alert("축하합니다! 40일의 완주를 마치셨습니다!");
+										    }
+										}
 
 											startButton
 													.addEventListener(
@@ -305,7 +304,7 @@ display: inline-block;
 																if (!animateHiker) {
 																	animateHiker = setInterval(
 																			moveHiker,
-																			24 * 60 * 60 * 1000); // 1000 = 10초, 24*60*60*1000 = 하루
+																			24*60*60*1000); // 1000 : 10초 24*60*60*1000 : 하루
 																}
 															});
 
@@ -324,7 +323,7 @@ display: inline-block;
 													.addEventListener(
 															'click',
 															function() {
-																hiker.style.bottom = '0px';
+																hiker.style.bottom = '20px';
 																if (animateHiker) {
 																	alert("리셋하시겠어요? 처음부터 다시 시작됩니다!");
 																	clearInterval(animateHiker);
@@ -332,6 +331,7 @@ display: inline-block;
 																}
 															});
 										</script>
+
 									</section>
 								</div>
 							</article>
@@ -340,7 +340,7 @@ display: inline-block;
 				</div>
 			</div>
 		</section>
-<button onclick="topFunction()" id="myBtn" title="Go to top">TOP</button>
+		<button onclick="topFunction()" id="myBtn" title="Go to top">TOP</button>
 		<!-- Footer -->
 		<footer id="footer">
 			<div class="container">
@@ -400,12 +400,12 @@ display: inline-block;
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-<script>
-function topFunction() {
-	  document.body.scrollTop = 0; // Safari를 위한 코드
-	  document.documentElement.scrollTop = 0; // Chrome, Firefox, IE, Opera를 위한 코드
-	}
-</script>
+	<script>
+		function topFunction() {
+			document.body.scrollTop = 0; // Safari를 위한 코드
+			document.documentElement.scrollTop = 0; // Chrome, Firefox, IE, Opera를 위한 코드
+		}
+	</script>
 </body>
 
 </html>
