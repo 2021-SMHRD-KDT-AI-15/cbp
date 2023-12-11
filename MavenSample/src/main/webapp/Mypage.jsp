@@ -389,7 +389,7 @@ display: inline-block;
 		var money = '${info1.p_day}' * '${info.s_daily}' * '${info.price}' / 20;
 		document.getElementById("money").innerHTML = money;
 
-		var ciga = '${info1.p_day}' * '${info.s_daily}'; // 당일 흡연량들의 총합 빼야함
+		var ciga = '${info1.p_day}' * ('${info.s_daily}'-'${info1.p_count}') ; // 당일 흡연량들의 총합 빼야함
 		document.getElementById("ciga").innerHTML = ciga;
 	</script>
 	<!-- Scripts -->
