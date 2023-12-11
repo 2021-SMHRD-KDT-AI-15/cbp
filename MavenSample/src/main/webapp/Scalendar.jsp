@@ -368,7 +368,7 @@ html, body {
                                        </c:choose>
                                        {
                                          start: '${log.that_day}',  
-                                         title: '${log.today_s}',
+                                         title: '흡연량 : ${log.today_s}',
                                          color: "#FF4646"
                                        }
                                      </c:forEach>
