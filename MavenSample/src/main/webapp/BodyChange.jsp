@@ -245,8 +245,17 @@ display: inline-block;
 							<div class="col-12">
 								<ul class="actions">
 									
-									<li><a id="start" class="button large" onclick="startGauges()">금연시작</a></li>
-									<li><a id="reset" class="button alt large" onclick="resetGauges()">초기화</a></li>
+									
+									
+									<% if(info != null) { %>
+            <li><a id="start" class="button large" onclick="startGauges()" href="./Mypage.jsp">금연시작</a></li>
+         <% } else { %>
+            <li><a id="start" class="button large" onclick="startGauges()" href="./Login.jsp">금연시작</a></li>
+         <% } %>
+									
+									
+									
+									
 								</ul>
 							</div>
 						</section>
