@@ -6,7 +6,7 @@
 	<insert id="put" parameterType="com.smhrd.model.QprojectDTO">
 		INSERT INTO q_project (email, p_day, p_start, p_end, p_count)
 		VALUES (#{email}, 1, #{p_start}, to_date(#{p_start}, 'YYYY-MM-DD') +
-		(interval '40' day), 1)
+		(interval '40' day), 0)
 	</insert>
 
 	<insert id="ciga" parameterType="com.smhrd.model.QprojectDTO">
