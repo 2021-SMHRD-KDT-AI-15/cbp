@@ -26,7 +26,7 @@
 </br>
 
 ## 3. ERD 설계
-![](![image](https://github.com/2021-SMHRD-KDT-AI-15/cbp/assets/144203952/f7b6a152-ee5b-402c-92f0-4d9dc34f83a3))
+![image](https://github.com/2021-SMHRD-KDT-AI-15/cbp/assets/144203952/f7b6a152-ee5b-402c-92f0-4d9dc34f83a3)
 
 ## 4. 핵심 기능
 이 서비스의 핵심 기능은 컨텐츠 등록 기능입니다.  
