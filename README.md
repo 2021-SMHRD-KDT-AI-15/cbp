@@ -16,7 +16,6 @@
   - JSP/SERVLET
   - Oracle DB
   - Mybatis
-  - Tomcat
   
 #### `Front-end`
   - HTML
