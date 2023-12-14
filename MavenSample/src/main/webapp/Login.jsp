@@ -60,8 +60,6 @@ a {
 			</div>
 		</header>
 
-		<!-- Nav -->
-		<!-- Q1.메뉴 -->
 	<!-- Nav -->
       <nav id="nav">
          <ul>
@@ -114,7 +112,6 @@ a {
 
          </ul>
       </nav>
-		<!-- Q2. 로그인 기능 -->
 		<!-- Main -->
 		<section id="main">
 			<div class="container">
@@ -141,7 +138,6 @@ a {
 			</div>
 		</section>
 
-		<!-- Q3.하단부 공통 -->
 		<!-- Footer -->
 		<footer id="footer">
 			<div class="container">

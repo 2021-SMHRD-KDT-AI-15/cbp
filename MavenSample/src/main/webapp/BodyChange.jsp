@@ -65,11 +65,11 @@ display: inline-block;
     border-radius: 5px;
     text-decoration: none;
    
-  position: fixed; /* 버튼을 스크롤과 독립적으로 위치시킵니다. */
-  bottom: 60px; /* 버튼을 페이지 하단에서 20px 떨어진 위치에 둡니다. */
-  right: 30px; /* 버튼을 페이지 오른쪽에서 30px 떨어진 위치에 둡니다. */
-  z-index: 99; /* z-index를 높여 다른 요소 위에 버튼이 나타나도록 합니다. */
-  font-size: 18px; /* 버튼의 텍스트 크기를 지정합니다. */
+  position: fixed; 
+  bottom: 60px;
+  right: 30px; 
+  z-index: 99; 
+  font-size: 18px; 
  }
     </style>
 </head>
@@ -87,7 +87,6 @@ display: inline-block;
 				</div>
 			</div>
 		</header>
-		<!-- 여기 바꾸기 -->
 		<!-- Nav -->
 		<nav id="nav">
 			<ul>
@@ -267,7 +266,6 @@ display: inline-block;
            									 <h3>20분 후: 회원님의 혈압과 심박동수가 정상화 되었습니다.</h3>
          									<% } %>
 
-									<!-- 첫 번째 게이지 바 -->
 									<div class="progress-container">
 										<progress id="gauge1" value="0" max="120"></progress>
 										<span id="percentDisplay1">0%</span>

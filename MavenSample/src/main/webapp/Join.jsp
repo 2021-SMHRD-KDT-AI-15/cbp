@@ -32,7 +32,6 @@
 				</div>
 			</div>
 		</header>
-		<!-- Q1.메뉴창 -->
 		<nav id="nav">
 			<ul>
 				<li class="current"><a href="./Main.jsp">홈</a></li>
@@ -75,7 +74,6 @@
 			</ul>
 		</nav>
 
-		<!-- Q2. 회원가입창 -->
 		<!-- Main -->
 		<section id="main">
 			<div class="container">
@@ -149,7 +147,6 @@
 			</div>
 		</section>
 
-		<!-- Q3.하단부 공통 -->
 		<!-- Footer -->
 		<footer id="footer">
 			<div class="container">

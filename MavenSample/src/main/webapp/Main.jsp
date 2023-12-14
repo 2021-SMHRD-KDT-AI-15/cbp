@@ -19,9 +19,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <style>
    #quote{
-      /* border: 5px solid #b1ddab; */
-      /* position: fixed; */
-      /* right: 10px; */
       bottom: 465px;
       font-size: 22px;
       font-weight:bold;
@@ -49,16 +46,16 @@ padding : 0;
     border-top-width: 66px;
     border-bottom-width: 10px;
     padding: 6em 0 6em 0;
-    position: relative; /* main에 대한 위치를 기준으로 quote를 배치합니다. */
+    position: relative;
 }
 
 #quote {
 	color: #000000;
 	align:center;
     position: absolute;
-    top: 55%; /* 상위 요소 (여기서는 #main)의 중앙에 위치하게 합니다. */
-    left: 50%; /* 상위 요소 (여기서는 #main)의 중앙에 위치하게 합니다. */
-    transform: translate(-50%, -50%); /* 요소 자체의 중앙을 기준으로 배치합니다. */
+    top: 55%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
     text-align: center;
 }
 
@@ -225,7 +222,6 @@ padding : 0;
    <script src="assets/js/util.js"></script>
    <script src="assets/js/main.js"></script>
 
-</script>
 </body>
 
 </html>

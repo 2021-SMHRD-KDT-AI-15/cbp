@@ -24,24 +24,17 @@ public class LoginService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		// 1. 인코딩
-
 		request.setCharacterEncoding("utf-8");
-
-		// 2. 데이터 꺼내오기
 
 		String email = request.getParameter("email");
 		String pw = request.getParameter("pw");
 		
-		// 3. MemberDAO 객체 생성
-
 		MemberDAO dao = new MemberDAO();
 		QprojectDAO dao1 = new QprojectDAO();
 		cigaDAO dao2 = new cigaDAO();
 
 		ArrayList<cigaDTO> q_list = new ArrayList<>();
 		q_list = dao2.log(email);
-		// 4. login() 호출 (<- 꺼내온 데이터 email, pw를 한 묶음으로 묶어서 전달 -> MemberDTO 활용)
 		
 		MemberDTO dto = new MemberDTO();
 		dto.setEmail(email);
@@ -53,7 +46,6 @@ public class LoginService extends HttpServlet {
 		MemberDTO result = dao.login(dto);
 		QprojectDTO result1 = dao1.come(dto1);
 
-		// 로그인에 성공했다면 회원정보를 공유할 수 있도록 session 영역에 저장해 페이지 이동
 		
 		if (result != null) { // 로그인 성공
 			

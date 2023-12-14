@@ -10,7 +10,6 @@
 
 	<script>
         alert("또 피우니...?");
-        // Join.jsp 페이지로 리다이렉트
         window.location.href = "Scalendar.jsp";
     </script>
 </body>

@@ -21,11 +21,7 @@ public class JoinService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		// 1. 요청에 대한 인코딩 작업
-
 		request.setCharacterEncoding("utf-8");
-
-		// 2. 요청값이 보내주는 데이터 꺼내오기
 
 		String email = request.getParameter("email");
 		String pw = request.getParameter("pw");
@@ -36,12 +32,9 @@ public class JoinService extends HttpServlet {
 		int s_daily = Integer.parseInt(request.getParameter("s_daily"));
 		String p_start = request.getParameter("q_date");
 
-		// 3. DAO 클래스 객체 생성 -> DB에 대한 작업을 진행할 수 있음
-
 		MemberDAO dao = new MemberDAO();
 		QprojectDAO dao1 = new QprojectDAO();
 
-		// 4. DAO의 회원가입 기능(메소드) 호출
 		MemberDTO dto2 = new MemberDTO(email);
 		int result2 = dao.check(dto2);
 
@@ -58,8 +51,6 @@ public class JoinService extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("JoinSuccess.jsp");
 			rd.forward(request, response);
 		}
-
-		// 5. 호출된 기능의 결과에 따라 화면 결과 출력
 
 	}
 

@@ -35,11 +35,11 @@
 	border: none;
 	border-radius: 5px;
 	text-decoration: none;
-	position: fixed; /* 버튼을 스크롤과 독립적으로 위치시킵니다. */
-	bottom: 60px; /* 버튼을 페이지 하단에서 20px 떨어진 위치에 둡니다. */
-	right: 30px; /* 버튼을 페이지 오른쪽에서 30px 떨어진 위치에 둡니다. */
-	z-index: 99; /* z-index를 높여 다른 요소 위에 버튼이 나타나도록 합니다. */
-	font-size: 18px; /* 버튼의 텍스트 크기를 지정합니다. */
+	position: fixed; 
+	bottom: 60px; 
+	right: 30px; 
+	z-index: 99; 
+	font-size: 18px; 
 }
 </style>
 
@@ -199,8 +199,7 @@
 									<hr>
 									</p>
 									<h3>
-										<!--그동안 핀 담배 nn개
-										s_daily * (오늘 날짜 - s_date) -->
+										
 									</h3>
 									<form name="frm" id="frm" action="" method="post">
 										<input type="hidden" name="csSignature"

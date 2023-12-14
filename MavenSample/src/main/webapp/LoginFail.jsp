@@ -9,7 +9,6 @@
 <body>
 	<script>
         alert("로그인 실패!");
-        // Join.jsp 페이지로 리다이렉트
         window.location.href = "Login.jsp";
     </script>
 </body>
