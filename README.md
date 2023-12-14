@@ -1,5 +1,5 @@
 # :pushpin: 금연 여행
-> 캘린더 API를 활용한 금연 일정 관리 서비스
+> 캘린더 API를 활용한 금연 일정 관리 서비스 </br>
 > Challenge Point : 캘린더 API 사용, 지도 API 사용, 애니메이션 효과
 
 </br>
@@ -10,17 +10,25 @@
 
 </br>
 
-## 2. 사용 기술
-#### `Back-end`
+## 2. 개발환경
+#### `사용언어`
   - Java 1.8
-  - JSP/SERVLET
-  - Oracle DB
-  - Mybatis
-  
-#### `Front-end`
   - HTML
   - CSS
-  - JS
+  - Javascript
+  
+#### `개발도구`
+  - eclipse
+  - VSCode
+
+#### `서버환경`
+  - tomcat 9.0
+
+#### `데이터베이스`
+  - Oracle 11g
+
+#### `빌드도구`
+  - maven
 
 </br>
 
