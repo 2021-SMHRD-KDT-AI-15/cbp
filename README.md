@@ -5,32 +5,28 @@
 </br>
 
 ## 1. 제작 기간 & 참여 인원
-- 2019년 2월 18일 ~ 4월 5일
-- 개인 프로젝트
+- 2023년 11월 30일 ~ 12월 13일
+- 5인 프로젝트
 
 </br>
 
 ## 2. 사용 기술
 #### `Back-end`
-  - Java 8
-  - Spring Boot 2.3
-  - Gradle
-  - Spring Data JPA
-  - QueryDSL
-  - H2
-  - MySQL 5.7
-  - Spring Security
-  - Jsoup
+  - Java 1.8
+  - JSP/SERVLET
+  - Oracle DB
+  - Mybatis
+  - Tomcat
+  
 #### `Front-end`
-  - Vue.js 3.0
-  - Element UI
+  - HTML
+  - CSS
+  - JS
 
 </br>
 
 ## 3. ERD 설계
-![](https://zuminternet.github.io/images/portal/post/2019-04-22-ZUM-Pilot-integer/final_erd.png)
-![](https://github.com/JungHyung2/gitio.io/blob/master/assets/images/portfolio/p1.jpg)
-
+![](![image](https://github.com/2021-SMHRD-KDT-AI-15/cbp/assets/144203952/f7b6a152-ee5b-402c-92f0-4d9dc34f83a3))
 
 ## 4. 핵심 기능
 이 서비스의 핵심 기능은 컨텐츠 등록 기능입니다.  
