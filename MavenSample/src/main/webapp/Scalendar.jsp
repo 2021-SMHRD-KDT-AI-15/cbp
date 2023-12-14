@@ -245,12 +245,6 @@ html, body {
         $.ajax({
             url: 'CigaretteCounter', // 서버에서 처리할 URL을 지정
             type: 'POST', // 클릭 이벤트를 서버로 전송할 때는 POST 메서드 사용
-            success: function(response) {
-                console.log("Cigarette count increased");
-            },
-            error: function(error) {
-                console.error("Error increasing cigarette count", error);
-            }
         });
     });
 </script>
