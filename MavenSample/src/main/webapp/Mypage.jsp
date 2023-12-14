@@ -304,7 +304,7 @@
 																if (!animateHiker) {
 																	animateHiker = setInterval(
 																			moveHiker,
-																			24*60*60*1000); // 1000 : 10초 24*60*60*1000 : 하루
+																			1000); // 1000 : 10초 24*60*60*1000 : 하루
 																}
 															});
 

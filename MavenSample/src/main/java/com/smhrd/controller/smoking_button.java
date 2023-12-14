@@ -27,10 +27,8 @@ public class smoking_button extends HttpServlet {
 		
 		int result = dao1.smoking(info.getEmail());
 
-		System.out.println(result);
 		
 		if(result > 0) {
-			System.out.println("카운팅 성공");
 			response.sendRedirect("buttonSuccess.jsp");
 		}else {
 			System.out.println("카운팅 실패");
