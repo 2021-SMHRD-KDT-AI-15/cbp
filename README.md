@@ -392,4 +392,8 @@ public Page<Post> findAllByTagName(String tagName, Pageable pageable) {
 </br>
 
 ## 7. 팀원 소개
->프로젝트 개발 회고 글: https://zuminternet.github.io/ZUM-Pilot-integer/
+>팀장 - 정연희 DB 설계및 구축 Back-end Fullcalendar API 활용한 DB데이터 연동 <br>
+>팀원 - 강치원 Back-end 인공지능 챗봇 서비스 구현, 크롤링 뉴스,가이드,신체변화 크롤링 및 DB 저장<br>
+>팀원 - 김병훈 Back-end 카카오맵 API 활용한 마커 기능, 프로그레스바 기능 구현, 크롤링 명언,뉴스 크롤링<br>
+>팀원 - 오푸른 Front & Back-end 회원가입,로그인 화면설계 메인페이지 설계 및 구축 마이페이지 등산 애니메이션 구현 전체 페이지 디자인 수정<br>
+>팀원 - 이상현 Front-end 서브페이지 설계 및 구축 Back-end 비회원 접근제한 기능 구현 흡연 체크 버튼 설계
