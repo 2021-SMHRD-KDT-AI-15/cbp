@@ -57,6 +57,7 @@
 
 ## 🎥 시연 영상
 https://github.com/2021-SMHRD-KDT-AI-15/cbp/issues/2#issue-2179218262
+
 </br>
 </br>
 
