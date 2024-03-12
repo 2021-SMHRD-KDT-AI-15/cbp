@@ -7,7 +7,7 @@
 
 ## 📅  제작 기간 & 참여 인원
 - 2023년 11월 28일 ~ 12월 13일
-- :crown: 팀장 - 정연희 PM / DB 설계및 구축 / Back-end Fullcalendar API 활용한 DB데이터 연동 <br>
+- :crown: 팀장 - 정연희 PM / DB 설계및 구축 / Back-end Fullcalendar API 활용한 DB데이터 연동 / 문서 작성<br>
   :green_heart: 팀원 - 강치원 Back-end 인공지능 챗봇 서비스 구현 / 크롤링(뉴스, 가이드, 신체변화) 및 DB 저장 / 문서 작성<br>
   :green_heart: 팀원 - 김병훈 Back-end 카카오맵 API 활용한 마커 기능, 프로그레스바 기능 구현 / 크롤링(명언,뉴스) 및 DB 저장 / Front-end 표지 디자인 작성 <br>
   :green_heart: 팀원 - 오푸른 Front-end 메인페이지 설계 및 구현, 마이페이지 등산 애니메이션 구현, 페이지 디자인 수정 / Back-end 회원가입, 로그인 구현 / 문서 작성 <br>
