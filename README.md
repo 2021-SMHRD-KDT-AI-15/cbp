@@ -6,29 +6,34 @@
 
 ## 📅  제작 기간 & 참여 인원
 - 2023년 11월 28일 ~ 12월 13일
-- 5인 프로젝트
+- :crown: 팀장 - 정연희 PM / DB 설계및 구축 / Back-end Fullcalendar API 활용한 DB데이터 연동 <br>
+  :green_heart: 팀원 - 강치원 Back-end 인공지능 챗봇 서비스 구현/ 크롤링(뉴스, 가이드, 신체변화) 및 DB 저장 / 문서 작성<br>
+  :green_heart: 팀원 - 김병훈 Back-end 카카오맵 API 활용한 마커 기능, 프로그레스바 기능 구현/ 크롤링(명언,뉴스) 및 DB 저장 / 표지 디자인 작성 <br>
+  :green_heart: 팀원 - 오푸른 Front-end 메인페이지 설계 및 구축, 마이페이지 등산 애니메이션 구현, 페이지 디자인 수정 / Back-end 회원가입, 로그인 화면설계 / 문서 작성 <br>
+  :green_heart: 팀원 - 이상현 Front-end 서브페이지 설계 및 구축 / Back-end 비회원 접근제한 기능 구현, 흡연 체크 버튼 설계
 
 </br>
 
 ## 🔨 개발환경
-#### `사용언어`
-  - Java 1.8
-  - HTML
-  - CSS
-  - Javascript
+#### 사용언어
+  - ![java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+  - ![html](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+  - ![css](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+  - ![js](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white)
   
-#### `개발도구`
-  - eclipse
-  - VSCode
+#### 개발도구
+  - ![eclipse](https://img.shields.io/badge/Eclipse-2C2255?style=for-the-badge&logo=eclipse&logoColor=white)
+  - ![visualstudiocode](https://img.shields.io/badge/VisualStudioCode-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
 
-#### `서버환경`
-  - tomcat 9.0
 
-#### `데이터베이스`
-  - Oracle 11g
+#### 서버환경
+  - ![apachetomcat](https://img.shields.io/badge/apachetomcat-F8DC75?style=for-the-badge&logo=apachetomcat&logoColor=white)
 
-#### `빌드도구`
-  - maven
+#### 데이터베이스
+  - ![oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=black)
+
+#### 빌드도구
+  - ![apachemaven](https://img.shields.io/badge/apachemaven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)
 
 </br>
 
@@ -60,12 +65,3 @@ https://github.com/2021-SMHRD-KDT-AI-15/cbp/issues/2#issue-2179218262
 
 </br>
 </br>
-
-
-
-## 👨‍👦‍👦 팀원 소개
->팀장 - 정연희 DB 설계및 구축 Back-end Fullcalendar API 활용한 DB데이터 연동 <br>
->팀원 - 강치원 Back-end 인공지능 챗봇 서비스 구현, 크롤링 뉴스,가이드,신체변화 크롤링 및 DB 저장<br>
->팀원 - 김병훈 Back-end 카카오맵 API 활용한 마커 기능, 프로그레스바 기능 구현, 크롤링 명언,뉴스 크롤링<br>
->팀원 - 오푸른 Front & Back-end 회원가입,로그인 화면설계 메인페이지 설계 및 구축 마이페이지 등산 애니메이션 구현 전체 페이지 디자인 수정<br>
->팀원 - 이상현 Front-end 서브페이지 설계 및 구축 Back-end 비회원 접근제한 기능 구현 흡연 체크 버튼 설계
