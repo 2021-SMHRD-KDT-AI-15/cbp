@@ -43,8 +43,7 @@
 
 
 ## 🔌 구성 및 흐름도
-![image](https://github.com/2021-SMHRD-KDT-AI-15/cbp/assets/149343248/89a06e3d-f7ac-435c-bc1b-08ad4f5ead26)
-</br>
+![서비스흐름도](https://github.com/2021-SMHRD-KDT-AI-15/cbp/assets/150218741/98f5b1a6-96b0-418a-ab3d-7ec487a47f85)
 </br>
 
 
