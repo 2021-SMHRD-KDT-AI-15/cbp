@@ -60,12 +60,7 @@
     <tr>
         <td>Library & API</td>
         <td>
-            <img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=jquery&logoColor=white">
-	    <img src="https://img.shields.io/badge/Spring Data JPA-bcae79?style=for-the-badge&logo=&logoColor=white"/>
-            <img src="https://img.shields.io/badge/Canvas-007CE2?style=for-the-badge&logo=Canvs&logoColor=white">
-            <img src="https://img.shields.io/badge/chart.js-F5788D?style=for-the-badge&logo=chart.js&logoColor=white">
             <img src="https://img.shields.io/badge/kakaoMap API-FFCD00?style=for-the-badge&logo=kakao&logoColor=white">
-			<img src="https://img.shields.io/badge/pytorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white">
 			<img src="https://img.shields.io/badge/opencv-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white">
         </td>
     </tr>
@@ -75,7 +70,6 @@
             <img src="https://img.shields.io/badge/eclipse-2C2255?style=for-the-badge&logo=eclipseide&logoColor=white">
             <img src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7?style=for-the-badge&logo=visual-studio-code&logoColor=white"/>
             <img src="https://img.shields.io/badge/SQL Developer-777777?style=for-the-badge&logo=&logoColor=white"/>
-            <img src="https://img.shields.io/badge/AWS-%23FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white"/>
         </td>
     </tr>
     <tr>
