@@ -50,13 +50,6 @@
             <img src="https://img.shields.io/badge/apache tomcat-F8DC75?style=for-the-badge&logo=apachetomcat&logoColor=white">
         </td>
     </tr>
-   <tr>
-        <td>Distribution</td>
-        <td>
-            <img src="https://img.shields.io/badge/AWS ec2-FF9900?style=for-the-badge&logo=amazonec2&logoColor=white">
-            <img src="https://img.shields.io/badge/AWS s3-569A31?style=for-the-badge&logo=amazons3&logoColor=white">
-        </td>
-    </tr>
     <tr>
         <td>Library & API</td>
         <td>
